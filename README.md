@@ -29,7 +29,10 @@ vipentium is a robust and user-friendly Python testing framework engineered to s
 pip install vipentium
 
 ---
-vipentium <test_path> [options] 
+vipentium-runner <test_path> [options] 
+
+Example:
+vipentium-runner test_kdsfk.py --report-html odsf.html
 ````
 
 Replace `<test_path>` with the path to the directory, file, or module containing your tests.
