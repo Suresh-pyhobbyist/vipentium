@@ -28,13 +28,18 @@ vipentium is a robust and user-friendly Python testing framework engineered to s
 
 ```
 pip install vipentium
+```
 
----
-vipentium-runner <test_path> [options] 
+## Usage Instructions
 
-Example:
-vipentium-runner test_kdsfk.py --report-html odsf.html
-````
+| **Type**       | **Command**                                         | **Example**                                   |
+|-----------------|----------------------------------------------------|-----------------------------------------------|
+| Recommended    | `vipentium-runner <test_path> [options]`            | `vipentium-runner test_example.py --parallel` |
+| Alternative    | `python -m vipentium.vipentium_runner <test_path> [options]` | `python -m vipentium.vipentium_runner test_example.py --parallel` |
+
+### Example:
+- **Recommended:** `vipentium-runner test_example.py --parallel`  
+- **Alternative:** `python -m vipentium.vipentium_runner test_example.py --parallel`
 
 Replace `<test_path>` with the path to the directory, file, or module containing your tests.
 
