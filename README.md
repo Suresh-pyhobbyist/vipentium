@@ -1,5 +1,6 @@
 # 🚀🔬 vipentium: A Comprehensive Python Testing Framework
 
+[![PyPI Downloads](https://static.pepy.tech/badge/vipentium)](https://pepy.tech/projects/vipentium)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Python Versions](https://img.shields.io/badge/Python-3.6%2B-blue.svg)](https://www.python.org/downloads/)
 [![Code Style](https://img.shields.io/badge/Code%20Style-PEP8-brightgreen.svg)](https://www.python.org/dev/peps/pep-0008/)
