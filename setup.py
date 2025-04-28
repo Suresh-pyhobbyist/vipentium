@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="vipentium",
-    version="1.0.0",  # Replace with your desired version
+    version="1.0.1",  # Replace with your desired version
     author="suresh",  # Replace with your name or organization
     description="Powerful & user-friendly Python testing – streamlined workflows",
     long_description=long_description,
