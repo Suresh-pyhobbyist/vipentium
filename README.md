@@ -1,13 +1,12 @@
-# vipentium: A Comprehensive Python Testing Framework
+![image](https://github.com/user-attachments/assets/cc2e0757-9bc0-4957-b406-d0a5f10049a2)
+
+vipentium is a robust and user-friendly Python testing framework engineered to streamline your testing process. It provides a rich set of features to facilitate efficient test creation and execution.
 
 [![PyPI Downloads](https://static.pepy.tech/badge/vipentium)](https://pepy.tech/projects/vipentium)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Python Versions](https://img.shields.io/badge/Python-3.6%2B-blue.svg)](https://www.python.org/downloads/)
 [![Code Style](https://img.shields.io/badge/Code%20Style-PEP8-brightgreen.svg)](https://www.python.org/dev/peps/pep-0008/)
 
-![image](https://github.com/user-attachments/assets/cc2e0757-9bc0-4957-b406-d0a5f10049a2)
-
-vipentium is a robust and user-friendly Python testing framework engineered to streamline your testing process. It provides a rich set of features to facilitate efficient test creation and execution.
 
 ## ✨ Key Features
 
