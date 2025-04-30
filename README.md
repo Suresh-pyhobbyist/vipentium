@@ -71,11 +71,57 @@ Replace `<test_path>` with the path to the directory, file, or module containing
 
 <!-- end list -->
 
+
+## 🚀 Usage Guidelines
+
+### 🗂 Test File Naming
+
+- **Naming Convention:**  
+  Name your test files with the prefix `test_` (e.g., `test_utils.py`). This allows vipentium to automatically discover them.
+
+### 🏗 Test Class Definition
+
+- **Inheritance:**  
+  Create test classes by subclassing the `TestCase` base class provided by vipentium. For example:
+
 ```python
+from vipentium import TestCase
 
-test_example.py
-# test_example.py
+class TestMyFunction(TestCase):
+    ...
+```
 
+### 📝 Test Method Definition
+
+- **Method Naming:**  
+  Define individual test methods with names starting with `test_` (e.g., `test_calculate_sum`).
+  
+- **Assertions:**  
+  Use the built-in assertion method `assert_equal(a, b)` to compare expected and actual results.  
+  You can also use standard Python `assert` statements if needed.
+
+### 🎯 Decorators for Enhanced Testing
+
+- **`@parameters(*args, **kwargs)`**  
+  Run a test method with multiple sets of arguments. You can supply individual tuples or a list of tuples. For named parameters, use a dictionary with keys `"args"`, `"kwargs"`, and optionally `"name"`.
+
+- **`@timeout(seconds)`**  
+  Set a maximum execution time for a test method.
+
+- **`@retry(times)`**  
+  Automatically retry a test method upon failure a specified number of times.
+
+- **`@mark(*tags)`**  
+  Decorate a test method (or class) with marker tags (strings) to help organize and filter tests.
+
+- **`@fixture(scope="function"|"session")`**  
+  Define reusable test setup functions:
+  - **`function`**: A new instance is provided for each test.
+  - **`session`**: The fixture is shared across all tests in a test session.
+
+#### Example Usage
+
+```python
 from vipentium import TestCase, parameters, mark, fixture
 
 @fixture(scope="function")
@@ -85,11 +131,10 @@ def simple_list():
 
 @fixture(scope="session")
 def shared_resource():
-    """A shared resource fixture across all tests in the session."""
+    """A shared resource fixture available for the entire session."""
     print("\nSetting up shared resource...")
     data = {"message": "Hello from shared resource"}
-    yield data
-    print("\nTearing down shared resource...")
+    return data
 
 @mark("basic")
 class TestBasicOperations(TestCase):
@@ -107,7 +152,7 @@ class TestBasicOperations(TestCase):
 
 @mark("math")
 class TestMathFunctions(TestCase):
-    @parameters((5, 2, 7), (10, -3, 7), (0, 0, 0), name="addition_examples")
+    @parameters((5, 2, 7), (10, -3, 7), (0, 0, 0))
     def test_add_parameterized(self, a, b, expected):
         self.assert_equal(a + b, expected)
 
@@ -129,60 +174,53 @@ class TestListManipulation(TestCase):
         self.assert_equal(simple_list, [1, 2])
 
     def test_contains(self, simple_list):
-        self.assertTrue(2 in simple_list)
-        self.assertFalse(5 in simple_list)
+        self.assert_equal(2 in simple_list, True)
+        self.assert_equal(5 in simple_list, False)
+```
 
-@mark("slow")
-class TestSlowOperation(TestCase):
-    def test_sleep(self):
-        import time
-        time.sleep(1)
-        self.assertTrue(True)
+## Testing and Output
 
-@mark("needs_cleanup")
-class TestWithSetupTeardown(TestCase):
-    def setUp(self):
-        print("\nSetting up test case with setup/teardown...")
-        self.resource = "initialized"
+### 🏃‍♂️ Running the Tests
 
-    def test_resource_available(self):
-        self.assert_equal(self.resource, "initialized")
+To run your tests, simply execute vipentium with your test file. For example:
 
-    def tearDown(self):
-        print("\nTearing down test case with setup/teardown...")
-        del self.resource
+```bash
+vipentium test_example.py
+```
+
+### 📊 Expected Output
+
+vipentium will automatically:
+- Discover test files with the `test_` prefix.
+- Inject fixtures based on parameter names.
+- Execute parameterized tests and other test methods.
+- Provide detailed output to the console similar to:
+
+```
+🚀 Welcome to vipentium! Let's run the tests! 🚀
+
+✅ [PASS] TestBasicOperations.test_addition (0.00s)
+✅ [PASS] TestBasicOperations.test_list_length (0.00s)
+✅ [PASS] TestBasicOperations.test_string_concat (0.00s)
+✅ [PASS] TestBasicOperations.test_shared_message (0.00s)
+✅ [PASS] TestMathFunctions.test_division (0.00s)
+✅ [PASS] TestMathFunctions.test_float_equality (0.00s)
+✅ [PASS] TestMathFunctions.test_add_parameterized (0.00s)
+✅ [PASS] TestListManipulation.test_append (0.00s)
+✅ [PASS] TestListManipulation.test_pop (0.00s)
+✅ [PASS] TestListManipulation.test_contains (0.00s)
+
+🌟 Test Summary 🌟
+🧪 Total: 10 | ✅ Passed: 10 | ❌ Failed: 0 | ⏱ Duration: 0.00s
+HTML report generated at hello.html
+```
+
+The output includes:
+- A test-by-test status with execution times.
+- A summary of total tests, passed tests, failed tests, and overall duration.
+- Optional report files (HTML, JSON) for further review.
 
 ---
-from vipentium import TestCase, parameters, timeout, retry, mark, fixture
-
-@fixture
-def setup_data():
-    return {"user_id": 123, "username": "testuser"}
-
-@mark("user", "integration")
-class TestUserOperations(TestCase):
-    def setUp(self):
-        self.api_client = ... # Initialize an API client
-
-    def tearDown(self):
-        pass # Clean up resources
-
-    @parameters((1, 2, 3, "positive"), (-1, 1, 0, "negative_zero"), name="addition_cases")
-    def test_add(self, a, b, expected, case_name):
-        self.assert_equal(a + b, expected)
-
-    @timeout(3)
-    @retry(2)
-    def test_api_request(self, setup_data):
-        user = self.api_client.get_user(setup_data["user_id"])
-        self.assert_equal(user["username"], setup_data["username"])
-
-    @mark("database")
-    def test_database_connection(self):
-        db = ... # Connect to database
-        self.assertTrue(db.is_connected())
-        db.close()
-```
 
 ## 🔌 Extending with Plugins
 
