@@ -691,6 +691,28 @@
                 </div>
             </div>
         </section>
+        <section class="vipentium-share-section py-12">
+            <div class="container-proper text-center">
+              <p class="text-lg text-gray-700 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold vipentium-secondary-green mb-4 sm:mb-6 transform transition-all duration-700 ease-out">
+                If you like Vipentium, just spread the love to fellow developers using the badge.
+              </p>
+              <br>
+              <button id="vipentiumBadgeButton" style="display:inline-flex; align-items:center; background-color:white; border:1px solid #2BC241; color:#2BC241; font-weight:bold; font-size:1rem; border-radius:8px; padding:0.75rem 1.5rem; box-shadow:0 2px 4px rgba(0,0,0,0.1); cursor:pointer; transition: background-color 0.2s;">
+                <img src="https://raw.githubusercontent.com/Suresh-pyhobbyist/vipentium/f8a137e0de4e89fc4600b08a3d3f6dd51258f06b/vipentium.svg" alt="Vipentium Logo" style="height:24px; width:24px; margin-right:8px;">
+                <span>Test with Vipentium</span>
+              </button>
+            </div>      
+        <textarea id="vipentiumBadgeCode" style="display:none;">
+        <button style="display:inline-flex; align-items:center; background-color:white; border:1px solid #2BC241; color:#2BC241; font-weight:bold; font-size:1rem; border-radius:8px; padding:0.75rem 1.5rem; box-shadow:0 2px 4px rgba(0,0,0,0.1); cursor:pointer; transition: background-color 0.2s;">
+          <img src="https://raw.githubusercontent.com/Suresh-pyhobbyist/vipentium/f8a137e0de4e89fc4600b08a3d3f6dd51258f06b/vipentium.svg" alt="Vipentium Logo" style="height:24px; width:24px; margin-right:8px;">
+          <span>Test with Vipentium</span>
+        </button>
+          </textarea>
+          <br>
+          <div id="vipentiumNotification" style="display:none; position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background-color:#2BC241; color:white; padding:8px 16px; border-radius:4px; font-size:0.875rem;">
+            Badge code copied!
+          </div>
+        </section>
     </main>
 
     <footer class="bg-gray-100 py-8 text-center text-gray-600 text-sm transition-colors duration-300">
@@ -709,6 +731,21 @@
     </footer>
     
     <script>
+        document.getElementById('vipentiumBadgeButton').addEventListener('click', function(e) {
+            e.preventDefault(); // Prevent default behavior, useful for right-clicks
+    
+            var badgeCode = document.getElementById('vipentiumBadgeCode');
+            badgeCode.style.display = 'block'; // Temporarily reveal textarea
+            badgeCode.select(); // Select its content
+            document.execCommand('copy'); // Copy it to clipboard
+            badgeCode.style.display = 'none'; // Hide textarea again
+    
+            var notification = document.getElementById('vipentiumNotification');
+            notification.style.display = 'block'; // Show confirmation message
+            setTimeout(function() {
+                notification.style.display = 'none'; // Hide after 2 seconds
+            }, 2000);
+        });
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
         const openIcon = mobileMenuButton.querySelector('.open-icon');
