@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,119 +7,9 @@
     <link rel="icon" href="https://raw.githubusercontent.com/Suresh-pyhobbyist/vipentium/f8a137e0de4e89fc4600b08a3d3f6dd51258f06b/vipentium.svg" type="image/svg+xml">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
-        /* Custom styles to enforce the color scheme */
-        .vipentium-primary-green {
-            color: #2BC241;
-        }
-        .vipentium-secondary-green {
-            color: #76E322;
-        }
-        .vipentium-bg-primary-green {
-            background-color: #2BC241;
-        }
-        .vipentium-bg-secondary-green {
-            background-color: #76E322;
-        }
-        .vipentium-border-primary-green {
-            border-color: #2BC241;
-        }
-        .vipentium-hover-primary-green:hover {
-            color: #76E322;
-        }
-        .vipentium-hover-bg-primary-green:hover {
-            background-color: #76E322;
-        }
-        .vipentium-code-block {
-            background-color: #1e293b; /* Tailwind's slate-800, a dark gray */
-            color: #f8fafc; /* Tailwind's slate-50, a very light gray */
-            padding: 1rem;
-            border-radius: 0.375rem; /* Tailwind's rounded-md */
-            font-family: monospace;
-            overflow-x: auto;
-        }
-        .vipentium-feature-icon {
-            width: 60px;
-            height: 60px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 0.5rem;
-            font-size: 1.5rem;
-            color: white;
-        }
-        .vipentium-feature-icon.discovery { background-color: #2BC241; }
-        .vipentium-feature-icon.parameterized { background-color: #76E322; }
-        .vipentium-feature-icon.async { background-color: #2BC241; }
-        .vipentium-feature-icon.timeout { background-color: #76E322; }
-        .vipentium-feature-icon.retry { background-color: #2BC241; }
-        .vipentium-feature-icon.parallel { background-color: #76E322; }
-        .vipentium-feature-icon.plugins { background-color: #2BC241; }
-        .vipentium-feature-icon.fixtures { background-color: #76E322; }
-        .vipentium-feature-icon.markers { background-color: #2BC241; }
-        .vipentium-feature-icon.verbose { background-color: #76E322; }
-        .vipentium-feature-icon.reporting { background-color: #2BC241; }
-        .vipentium-nav-link.active {
-            border-bottom: 2px solid #2BC241;
-        }
-
-        /* .hidden {
-                    display: none !important;
-                } */
-                /* Default background for larger screens (white) */
-        .vipentium-bg-white {
-            background-color: white;
-        }
-
-        /* Default background for larger screens (white) */
-        .vipentium-bg-white {
-            background-color: white;
-        }
-
-        /* Ensure a white background on mobile devices (max-width: some breakpoint) */
-        @media (max-width: 767px) { /* Adjust 767px as needed for your mobile breakpoint */
-            .py-12, .py-20 {
-              padding-top: 0 !important;
-            }
-            .vipentium-bg-white {
-                background-color: white; /* Force white background on mobile */
-            }
-        }
-        /* Properly defined container with responsive padding */
-        .container-proper {
-            max-width: 1280px; /* Adjust as needed */
-            margin-left: auto;
-            margin-right: auto;
-            padding-left: 1rem; /* Default small padding */
-            padding-right: 1rem; /* Default small padding */
-        }
-
-        @media (min-width: 640px) { /* sm */
-            .container-proper {
-                padding-left: 2rem;
-                padding-right: 2rem;
-            }
-        }
-
-        @media (min-width: 1280px) { /* xl */
-            .container-proper {
-                padding-left: 4rem;
-                padding-right: 4rem;
-            }
-        }
-
-        @media (min-width: 1920px) { /* Custom larger breakpoint */
-            .container-proper {
-                padding-left: 6rem;
-                padding-right: 6rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles/vipstyle.css">
 </head>
 <body class="vipentium-bg-gray-100 font-sans antialiased">
-
-
-
     <nav class="vipentium-bg-white shadow-md py-4 sticky top-0 z-50">
         <div class="container mx-auto flex justify-between items-center px-4 md:px-6 lg:px-8 xl:px-10 2xl:px-12" style="max-width: 1600px;">
             <a href="#" class="text-xl font-semibold transition-fast hover:vipentium-primary-green">
@@ -135,41 +24,36 @@
                 </button>
             </div>
             <div class="hidden md:flex space-x-6 items-center">
-                <a href="#features" class="vipentium-nav-link text-gray-700 hover:vipentium-primary-green transition-fast">Features</a>
-                <a href="#getting-started" class="vipentium-nav-link text-gray-700 hover:vipentium-primary-green transition-fast">Getting Started</a>
-                <a href="#command-line-options" class="vipentium-nav-link text-gray-700 hover:vipentium-primary-green transition-fast">Commands</a>
-                <a href="#writing-tests" class="vipentium-nav-link text-gray-700 hover:vipentium-primary-green transition-fast">Writing Tests</a>
-                <a href="#plugins" class="vipentium-nav-link text-gray-700 hover:vipentium-primary-green transition-fast">Plugins</a>
-                <a href="#reporting" class="vipentium-nav-link text-gray-700 hover:vipentium-primary-green transition-fast">Reporting</a>
+                <a href="#features" class="vipentium-nav-link text-gray-700 hover:vipentium-primary-green transition-fast">Home</a>
+                <a href="pages/docs.html" class="vipentium-nav-link text-gray-700 hover:vipentium-primary-green transition-fast">Docs</a>
+            
                 <a href="https://pypi.org/project/vipentium/" target="_blank" class="vipentium-bg-primary-green hover:vipentium-bg-secondary-green text-white font-semibold py-2 px-4 rounded-full shadow-sm transition-fast">Install via pip</a>
             </div>
         </div>
         <div id="mobile-menu" class="hidden vipentium-bg-white shadow-md absolute top-full left-0 w-full z-50">
             <div class="px-4 py-2 flex flex-col space-y-2">
                 <a href="#features" class="text-gray-700 hover:vipentium-primary-green block py-2">Features</a>
-                <a href="#getting-started" class="text-gray-700 hover:vipentium-primary-green block py-2">Getting Started</a>
-                <a href="#command-line-options" class="text-gray-700 hover:vipentium-primary-green block py-2">Commands</a>
-                <a href="#writing-tests" class="text-gray-700 hover:vipentium-primary-green block py-2">Writing Tests</a>
-                <a href="#plugins" class="text-gray-700 hover:vipentium-primary-green block py-2">Plugins</a>
-                <a href="#reporting" class="text-gray-700 hover:vipentium-primary-green block py-2">Reporting</a>
+                <a href="./pages/docs.html" class="text-gray-700 hover:vipentium-primary-green block py-2">Getting Started</a>
+            
                 <a href="https://pypi.org/project/vipentium/" target="_blank" class="vipentium-bg-primary-green hover:vipentium-bg-secondary-green text-white font-semibold py-2 px-4 rounded-full shadow-sm transition-fast block text-center">Install via pip</a>
             </div>
         </div>
     </nav>
 
-    <main class="py-12">
+    <main class="py-12 " style="padding-top: 0rem;">
         <section class="py-20 bg-gradient-to-br from-gray-100 to-white overflow-hidden relative">
-            <div class="container mx-auto p-4 sm:p-6 lg:p-8 lg:max-w-screen-lg">
+            <div class="w-full md:w-3/4 lg:w-5/6 xl:w-5/6 mx-auto pl-[50px]">
         
                 <div class="w-full md:w-3/4 lg:w-5/6 xl:w-5/6 mx-auto">
                     <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold vipentium-secondary-green mb-4 sm:mb-6 transform translate-y-[-10px] opacity-0 transition-all duration-700 ease-out" style="color: #76E322;" data-reveal="true" data-delay="200">
                         <span class="block md:inline">Vipentium</span>
-                        <span class="block md:inline vipentium-primary-green" style="color: #2BC241;"> - Test with Modernity</span>
+                        <span class="hdr"><br></span>
+                        <span class="block md:inline vipentium-primary-green " style="color: #2BC241;">Test with Modernity</span>
                     </h1>
                     <p class="text-lg sm:text-xl md:text-2xl text-gray-700 leading-relaxed mb-6 sm:mb-8 transform translate-y-[-10px] opacity-0 transition-all duration-700 ease-out" data-reveal="true" data-delay="400">
-                        Elevate your Python testing experience with a framework engineered for efficiency, power, and ease of use.
+                        Unlock the true potential of Python testing with a framework built for speed, reliability, and simplicity. Say goodbye to debugging headaches and embrace seamless automation that scales effortlessly
                     </p>
-                    <div class="flex flex-col sm:flex-row space-y-2 sm:space-x-2 sm:space-y-0 mb-4 sm:mb-6 transform translate-y-[-10px] opacity-0 transition-all duration-700 ease-out" data-reveal="true" data-delay="600">
+                    <div class="flex flex-col sm:flex-row space-y-2 sm:space-x-2 sm:space-y-0 mb-4 sm:mb-6 transform translate-y-[-10px] opacity-0 transition-all duration-700 ease-out pt-4" data-reveal="true" data-delay="600">
                         <a href="#features" class="w-full sm:w-auto bg-white hover:bg-gray-100 vipentium-primary-green font-semibold py-2 px-4 rounded-md shadow-sm transition duration-300 ease-in-out border vipentium-border-primary-green text-sm md:text-base">
                             Explore Features
                         </a>
@@ -204,68 +88,28 @@
             </div>
         </section>
 
-        <section class="py-8" id="features">
-            <!-- <div class="container-proper mx-auto">
-                <h2 class="text-3xl font-semibold vipentium-secondary-green mb-6 text-center md:text-left">✨ Key Features</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="bg-white rounded-lg shadow-md p-6">
-                        <div class="vipentium-feature-icon discovery"><i class="fas fa-search"></i></div>
-                        <h3 class="text-xl font-semibold vipentium-primary-green mb-2">Auto Test Discovery</h3>
-                        <p class="text-gray-700">Automatically identifies test files, modules, and directories.</p>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-md p-6">
-                        <div class="vipentium-feature-icon parameterized"><i class="fas fa-cogs"></i></div>
-                        <h3 class="text-xl font-semibold vipentium-primary-green mb-2">Parameterized Testing</h3>
-                        <p class="text-gray-700">Run tests with multiple sets of input data.</p>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-md p-6">
-                        <div class="vipentium-feature-icon async"><i class="fas fa-stopwatch"></i></div>
-                        <h3 class="text-xl font-semibold vipentium-primary-green mb-2">Asynchronous Test Support</h3>
-                        <p class="text-gray-700">Supports testing asynchronous Python code.</p>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-md p-6">
-                        <div class="vipentium-feature-icon timeout"><i class="fas fa-clock"></i></div>
-                        <h3 class="text-xl font-semibold vipentium-primary-green mb-2">Timeout Control</h3>
-                        <p class="text-gray-700">Set maximum execution time for tests.</p>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-md p-6">
-                        <div class="vipentium-feature-icon retry"><i class="fas fa-redo"></i></div>
-                        <h3 class="text-xl font-semibold vipentium-primary-green mb-2">Test Retries</h3>
-                        <p class="text-gray-700">Automatically re-run failing tests.</p>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-md p-6">
-                        <div class="vipentium-feature-icon parallel"><i class="fas fa-rocket"></i></div>
-                        <h3 class="text-xl font-semibold vipentium-primary-green mb-2">Parallel Execution</h3>
-                        <p class="text-gray-700">Run tests concurrently for faster execution.</p>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-md p-6">
-                        <div class="vipentium-feature-icon plugins"><i class="fas fa-plug"></i></div>
-                        <h3 class="text-xl font-semibold vipentium-primary-green mb-2">Extensible Plugin System</h3>
-                        <p class="text-gray-700">Customize and extend Vipentium with plugins.</p>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-md p-6">
-                        <div class="vipentium-feature-icon fixtures"><i class="fas fa-wrench"></i></div>
-                        <h3 class="text-xl font-semibold vipentium-primary-green mb-2">Enhanced Fixture Management</h3>
-                        <p class="text-gray-700">Manage test dependencies and setup/cleanup.</p>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-md p-6">
-                        <div class="vipentium-feature-icon markers"><i class="fas fa-tag"></i></div>
-                        <h3 class="text-xl font-semibold vipentium-primary-green mb-2">Test Marking</h3>
-                        <p class="text-gray-700">Categorize and selectively run tests using markers.</p>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-md p-6">
-                        <div class="vipentium-feature-icon verbose"><i class="fas fa-list-ul"></i></div>
-                        <h3 class="text-xl font-semibold vipentium-primary-green mb-2">Verbose Output</h3>
-                        <p class="text-gray-700">Get detailed information about test execution.</p>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-md p-6">
-                        <div class="vipentium-feature-icon reporting"><i class="fas fa-chart-bar"></i></div>
-                        <h3 class="text-xl font-semibold vipentium-primary-green mb-2">Detailed Reporting</h3>
-                        <p class="text-gray-700">Generate comprehensive test reports.</p>
-                    </div>
-                    <div></div>
+        <section class="vipentium-share-section py-8 vipentium-bg-primary-green flex justify-center px-4 py-20">
+            <div id="codeEditor" class="w-full max-w-6xl bg-gray-800 rounded-lg shadow-2xl overflow-hidden border-4 border-gray-700">
+              <!-- Header -->
+              <div class="flex flex-col md:flex-row justify-between items-center md:items-center bg-white-900 px-6 py-4 border-b border-gray-700">
+                <span class="text-3xl font-bold text-white mb-2 md:mb-0">test_summary.log</span>
+                
+              </div>
+              <!-- Content -->
+              <div class="p-4 md:p-6 overflow-y-auto" style="max-height: calc(100vh - 120px); scrollbar-width: thin; scrollbar-color: #4B5563 transparent;">
+                <div class="space-y-4 text-base md:text-2xl vipentium-primary-green font-mono" style="animation: fadeIn 1s ease-in;">
+                  <div class="output-line" style="animation-delay: 0.3s;">🚀 Welcome to vipentium! Let's run the tests! 🚀</div>
+                  <div class="output-line" style="animation-delay: 1s;">✅ [PASS] TestBasicOperations.test_addition (0.00s)</div>
+                  <div class="output-line" style="animation-delay: 1.5s;">✅ [PASS] TestBasicOperations.test_list_length (0.00s)</div>
+                  <div class="output-line" style="animation-delay: 2s;">✅ [PASS] TestBasicOperations.test_string_concat (0.00s)</div>
+                  <div class="output-line" style="animation-delay: 2.5s;">✅ [PASS] TestMathFunctions.test_division (0.00s)</div>
+                  <div class="output-line" style="animation-delay: 3s;">🌟 Test Summary 🌟 | Total: 4 | Passed: 4 | Failed: 0 | Duration: 0.00s</div>
                 </div>
-            </div> -->
+              </div>
+            </div>
+          </section>
+
+        <section class="py-8" id="features">
             <div class="container-proper mx-auto">
               <!-- Section Header -->
               <h2 class="text-3xl font-semibold vipentium-secondary-green mb-6 text-center md:text-left">
@@ -411,286 +255,8 @@
             </div>
             
         </section>
+        
 
-        <section class="py-8" id="getting-started">
-            <div class="container-proper mx-auto">
-                <h2 class="text-3xl font-semibold vipentium-secondary-green mb-6 text-center md:text-left">🚀 Getting Started</h2>
-                <div class="bg-white rounded-lg shadow-md p-6">
-                    <h3 class="text-xl font-semibold vipentium-primary-green mb-2">Installation</h3>
-                    <p class="text-gray-700 mb-4">Install Vipentium using pip:</p>
-                    <div class="relative">
-                        <pre id="install-command" class="vipentium-code-block cursor-pointer select-all" onclick="copyToClipboard('install-command')"><code>pip install vipentium</code></pre>
-                        <button id="copy-button-install" class="absolute top-2 right-2 bg-gray-300 hover:bg-gray-400 text-gray-700 font-semibold py-1 px-2 rounded-md text-sm focus:outline-none focus:ring-2 focus-ring-vipentium-primary-green transition duration-200" onclick="copyToClipboard('install-command')">
-                            <i class="fas fa-copy"></i> Copy
-                        </button>
-                        <div id="copy-message-install" class="absolute top-full left-0 mt-1 bg-vipentium-primary-green text-white py-1 px-2 rounded-md text-xs opacity-0 transition duration-300">
-                            Copied!
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="py-8" id="command-line-options">
-            <div class="container-proper mx-auto">
-                <h2 class="text-3xl font-semibold vipentium-secondary-green mb-6 text-center md:text-left">⚙️ Command-Line Options</h2>
-                <div class="bg-white rounded-lg shadow-md p-6 overflow-x-auto">
-                    <table class="min-w-full leading-normal">
-                        <thead>
-                            <tr>
-                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                                    Option
-                                </th>
-                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                                    Description
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="px-5 py-3 border-b border-gray-200 bg-white text-sm">
-                                    <code class="vipentium-code-block inline-block px-2 py-0.5 text-xs rounded">
-                                        &lt;test_path&gt;
-                                    </code>
-                                </td>
-                                <td class="px-5 py-3 border-b border-gray-200 bg-white text-sm">
-                                    The path to the directory, file, or module where vipentium should discover and run tests.
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="px-5 py-3 border-b border-gray-200 bg-white text-sm">
-                                    <code class="vipentium-code-block inline-block px-2 py-0.5 text-xs rounded">
-                                        --parallel
-                                    </code>
-                                </td>
-                                <td class="px-5 py-3 border-b border-gray-200 bg-white text-sm">
-                                    Enable parallel test execution using threads for potentially faster test runs.
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="px-5 py-3 border-b border-gray-200 bg-white text-sm">
-                                    <code class="vipentium-code-block inline-block px-2 py-0.5 text-xs rounded">
-                                        --process
-                                    </code>
-                                </td>
-                                <td class="px-5 py-3 border-b border-gray-200 bg-white text-sm">
-                                    Use separate processes for parallel test execution (requires <code class="vipentium-code-block inline-block px-2 py-0.5 text-xs rounded">--parallel</code>). Provides better isolation.
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="px-5 py-3 border-b border-gray-200 bg-white text-sm">
-                                    <code class="vipentium-code-block inline-block px-2 py-0.5 text-xs rounded">
-                                        --verbose
-                                    </code>
-                                </td>
-                                <td class="px-5 py-3 border-b border-gray-200 bg-white text-sm">
-                                    Enable verbose output, showing more details about the test execution process.
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="px-5 py-3 border-b border-gray-200 bg-white text-sm">
-                                    <code class="vipentium-code-block inline-block px-2 py-0.5 text-xs rounded">
-                                        --report-json &lt;filename&gt;
-                                    </code>
-                                </td>
-                                <td class="px-5 py-3 border-b border-gray-200 bg-white text-sm">
-                                    Generate a test report in JSON format and save it to the specified filename.
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="px-5 py-3 border-b border-gray-200 bg-white text-sm">
-                                    <code class="vipentium-code-block inline-block px-2 py-0.5 text-xs rounded">
-                                        --report-html &lt;filename&gt;
-                                    </code>
-                                </td>
-                                <td class="px-5 py-3 border-b border-gray-200 bg-white text-sm">
-                                    Generate a test report in HTML format and save it to the specified filename.
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="px-5 py-3 border-b border-gray-200 bg-white text-sm">
-                                    <code class="vipentium-code-block inline-block px-2 py-0.5 text-xs rounded">
-                                        --mark &lt;marker&gt;
-                                    </code>
-                                </td>
-                                <td class="px-5 py-3 border-b border-gray-200 bg-white text-sm">
-                                    Only run tests that are decorated with the specified marker. This option can be used multiple times.
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
-
-        <section class="py-8" id="writing-tests">
-            <div class="container-proper mx-auto">
-                <h2 class="text-3xl font-semibold vipentium-secondary-green mb-6 text-center md:text-left">✍️ Writing Effective Tests</h2>
-                <div class="bg-white rounded-lg shadow-md p-6">
-                    <h3 class="text-xl font-semibold vipentium-primary-green mb-2">Test Case Structure</h3>
-                    <p class="text-gray-700 mb-4">Organize your tests within classes that inherit from <code>vipentium.TestCase</code>. This provides a structured way to group related tests.</p>
-                    <ul class="list-disc pl-6 text-gray-700 mb-4">
-                        <li><strong>Test File Naming:</strong> Files should start with <code>test_</code> (e.g., <code>test_utils.py</code>).</li>
-                        <li><strong>Test Class Definition:</strong> Create classes inheriting from <code>TestCase</code>.</li>
-                        <li><strong>Test Method Definition:</strong> Methods within test classes must start with <code>test_</code> (e.g., <code>test_calculate_sum</code>).</li>
-                    </ul>
-                    <h3 class="text-xl font-semibold vipentium-primary-green mt-4 mb-2">Assertions</h3>
-                    <p class="text-gray-700 mb-4">Verify expected outcomes using assertions. The <code>TestCase</code> class offers <code>assert_equal(a, b)</code> for direct comparison. Standard Python's <code>assert</code> can also be used.</p>
-                    <div class="vipentium-code-block">
-                        <pre><code>from vipentium import TestCase, parameters, mark, fixture
-    
-    @mark("basic")
-    class TestBasicOperations(TestCase):
-        def test_addition(self):
-            # Asserts that 2 + 2 equals the expected value of 4
-            self.assert_equal(2 + 2, 4)
-    
-        def test_string_concat(self):
-            # Asserts that the concatenation of "hello" and "world" is "helloworld"
-            self.assert_equal("hello" + "world", "helloworld")
-    
-        def test_list_length(self, simple_list):
-            # Asserts that the length of the 'simple_list' fixture is 3
-            self.assert_equal(len(simple_list), 3)
-    
-        @mark("math")
-        class TestMathFunctions(TestCase):
-            @parameters((5, 2, 7), (10, -3, 7), (0, 0, 0), name="addition_examples")
-            def test_add_parameterized(self, a, b, expected):
-                # Runs the test multiple times with different inputs (a, b) and asserts the 'expected' result
-                self.assert_equal(a + b, expected)
-    </code></pre>
-                    </div>
-                    <h3 class="text-xl font-semibold vipentium-primary-green mt-4 mb-2">Decorators for Enhanced Testing</h3>
-                    <p class="text-gray-700 mb-4">Decorators provide powerful ways to modify test behavior:</p>
-                    <ul class="list-disc pl-6 text-gray-700 mb-4">
-                        <li><code>@parameters(*args, **kwargs)</code>: Executes a test method with multiple input sets. The <code>name</code> argument can provide descriptive names for each run.</li>
-                        <li><code>@timeout(seconds)</code>: Sets a maximum execution time for a test, preventing indefinite hangs.</li>
-                        <li><code>@retry(times)</code>: Automatically retries a failing test a specified number of times.</li>
-                        <li><code>@mark(*tags)</code>: Adds metadata (tags) to tests, allowing for selective execution.</li>
-                        <li><code>@fixture(scope="function"|"session")</code>: Defines reusable setup and teardown logic. <code>"function"</code> scope creates a new fixture instance for each test, while <code>"session"</code> creates it once per test session.</li>
-                    </ul>
-                    <div class="vipentium-code-block">
-                        <pre><code>from vipentium import TestCase, parameters, timeout, retry, mark, fixture
-    
-    @fixture(scope="function")
-    def simple_list():
-        """Provides a simple list [1, 2, 3] for test methods."""
-        return [1, 2, 3]
-    
-    @fixture(scope="session")
-    def shared_resource():
-        """Sets up a shared resource once per session and cleans it up."""
-        print("\\nSetting up shared resource...")
-        data = {"message": "Hello from shared resource"}
-        yield data  # Provides the fixture value
-        print("\\nTearing down shared resource...")
-    
-    @mark("slow")
-    class TestSlowOperation(TestCase):
-        @timeout(1)
-        def test_sleep(self):
-            # This test will fail if it takes longer than 1 second
-            import time
-            time.sleep(0.5)
-            self.assertTrue(True)
-    
-    @mark("unstable")
-    class TestWithRetry(TestCase):
-        counter = 0
-        @retry(3)
-        def test_flaky_operation(self):
-            # This test will be retried up to 3 times if it fails
-            self.counter += 1
-            if self.counter < 3:
-                self.assert_equal(1, 2) # Will fail on the first two attempts
-            else:
-                self.assert_equal(1, 1) # Will pass on the third attempt
-    </code></pre>
-                    </div>
-                </div>
-            </div>
-        </section>
-    
-        <section class="py-8" id="plugins">
-            <div class="container-proper mx-auto">
-                <h2 class="text-3xl font-semibold vipentium-secondary-green mb-6 text-center md:text-left">🔌 Extending with Plugins</h2>
-                <div class="bg-white rounded-lg shadow-md p-6">
-                    <p class="text-gray-700 mb-4">Vipentium's plugin system allows you to hook into various stages of the test execution process, enabling customization and extension of its behavior.</p>
-                    <h3 class="text-xl font-semibold vipentium-primary-green mb-2">Creating a Plugin</h3>
-                    <p class="text-gray-700 mb-4">To create a plugin, define a class that inherits from <code>vipentium.Plugin</code> and override specific hook methods.</p>
-                    <ul class="list-decimal pl-6 text-gray-700 mb-4">
-                        <li><strong>Inherit from Plugin:</strong> Your plugin class must inherit from <code>vipentium.Plugin</code>.</li>
-                        <li><strong>Override Hook Methods:</strong> Implement methods like <code>before_test</code> (executed before each test), <code>after_test</code> (executed after each test), <code>on_start_suite</code> (executed at the beginning of the test suite), and <code>on_end_suite</code> (executed at the end of the test suite) to perform custom actions.</li>
-                        <li><strong>Register Your Plugin:</strong> Use the <code>register_plugin()</code> function to make your plugin active.</li>
-                    </ul>
-                    <div class="vipentium-code-block">
-                        <pre><code>from vipentium import Plugin, register_plugin
-    
-    class CustomReportPlugin(Plugin):
-        def before_test(self, test_name, test_class, method_name, parameters):
-            print(f"[PLUGIN] Starting test: {test_name}")
-    
-        def after_test(self, test_name, test_class, method_name, parameters, success, message, duration):
-            if success:
-                print(f"[PLUGIN] Test '{test_name}' passed in {duration:.2f}s")
-            else:
-                print(f"[PLUGIN] Test '{test_name}' failed: {message}")
-    
-        def on_start_suite(self):
-            print("[PLUGIN] Test suite started.")
-    
-        def on_end_suite(self):
-            print("[PLUGIN] Test suite finished.")
-    
-    def load_my_plugins():
-        register_plugin(CustomReportPlugin())
-    
-    # Call this function before running your tests to activate the plugin.
-    # For example, you might call it in a conftest.py file or directly in your test runner script.
-    # load_my_plugins()
-    </code></pre>
-                    </div>
-                </div>
-            </div>
-        </section>
-    
-        <section class="py-8" id="reporting">
-            <div class="container-proper mx-auto">
-                <h2 class="text-3xl font-semibold vipentium-secondary-green mb-6 text-center md:text-left">📊 Detailed Reporting</h2>
-                <div class="bg-white rounded-lg shadow-md p-6">
-                    <p class="text-gray-700 mb-4">Vipentium offers built-in options for generating detailed reports of your test execution, providing insights into test results and performance.</p>
-                    <h3 class="text-xl font-semibold vipentium-primary-green mb-2">Report Formats</h3>
-                    <ul class="list-disc pl-6 text-gray-700 mb-4">
-                        <li><strong>JSON Report:</strong> A structured <code>.json</code> file containing a comprehensive summary of the test run, including details of each test case, its status (passed, failed), duration, and any error messages. This format is ideal for programmatic analysis.</li>
-                        <li><strong>HTML Report:</strong> A user-friendly, self-contained <code>.html</code> file that presents the test results in an easily readable format within a web browser. It typically includes summaries, individual test details, and any failure information.</li>
-                    </ul>
-                    <h3 class="text-xl font-semibold vipentium-primary-green mt-4 mb-2">Generating Reports via Command-Line Options</h3>
-                    <p class="text-gray-700 mb-4">Use the following command-line options with <code>vipentium-runner</code> to generate reports:</p>
-                    <ul class="list-disc pl-6 text-gray-700 mb-4">
-                        <li><code>--report-json &lt;filename&gt;</code>: Specifies the filename for the generated JSON report (e.g., <code>--report-json report.json</code>).</li>
-                        <li><code>--report-html &lt;filename&gt;</code>: Specifies the filename for the generated HTML report (e.g., <code>--report-html report.html</code>).</li>
-                    </ul>
-                    <div class="relative">
-                        <pre id="report-command-json" class="vipentium-code-block cursor-pointer select-all" onclick="copyToClipboard('report-command-json')"><code>vipentium-runner test_suite.py --report-json test_results.json</code></pre>
-                        <button id="copy-button-report-json" class="absolute top-2 right-2 bg-gray-300 hover:bg-gray-400 text-gray-700 font-semibold py-1 px-2 rounded-md text-sm focus:outline-none focus:ring-2 focus-ring-vipentium-primary-green transition duration-200" onclick="copyToClipboard('report-command-json')">
-                            <i class="fas fa-copy"></i> Copy
-                        </button>
-                        <div id="copy-message-report-json" class="absolute top-full left-0 mt-1 bg-vipentium-primary-green text-white py-1 px-2 rounded-md text-xs opacity-0 transition duration-300">
-                            Copied!
-                        </div>
-                    </div>
-                    <div class="relative mt-2">
-                        <pre id="report-command-html" class="vipentium-code-block cursor-pointer select-all" onclick="copyToClipboard('report-command-html')"><code>vipentium-runner tests/ --report-html test_report.html</code></pre>
-                        <button id="copy-button-report-html" class="absolute top-2 right-2 bg-gray-300 hover:bg-gray-400 text-gray-700 font-semibold py-1 px-2 rounded-md text-sm focus:outline-none focus:ring-2 focus-ring-vipentium-primary-green transition duration-200" onclick="copyToClipboard('report-command-html')">
-                            <i class="fas fa-copy"></i> Copy
-                        </button>
-                        <div id="copy-message-report-html" class="absolute top-full left-0 mt-1 bg-vipentium-primary-green text-white py-1 px-2 rounded-md text-xs opacity-0 transition duration-300">
-                            Copied!
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
         <section class="vipentium-share-section py-12">
             <div class="container-proper text-center">
               <p class="text-lg text-gray-700 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold vipentium-secondary-green mb-4 sm:mb-6 transform transition-all duration-700 ease-out">
@@ -709,6 +275,8 @@
         </button>
           </textarea>
           <br>
+          
+          <!-- Notification Message -->
           <div id="vipentiumNotification" style="display:none; position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background-color:#2BC241; color:white; padding:8px 16px; border-radius:4px; font-size:0.875rem;">
             Badge code copied!
           </div>
@@ -729,98 +297,6 @@
             document.getElementById('copyright-year').textContent = new Date().getFullYear();
         </script>
     </footer>
-    
-    <script>
-        document.getElementById('vipentiumBadgeButton').addEventListener('click', function(e) {
-            e.preventDefault(); // Prevent default behavior, useful for right-clicks
-    
-            var badgeCode = document.getElementById('vipentiumBadgeCode');
-            badgeCode.style.display = 'block'; // Temporarily reveal textarea
-            badgeCode.select(); // Select its content
-            document.execCommand('copy'); // Copy it to clipboard
-            badgeCode.style.display = 'none'; // Hide textarea again
-    
-            var notification = document.getElementById('vipentiumNotification');
-            notification.style.display = 'block'; // Show confirmation message
-            setTimeout(function() {
-                notification.style.display = 'none'; // Hide after 2 seconds
-            }, 2000);
-        });
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const openIcon = mobileMenuButton.querySelector('.open-icon');
-        const closeIcon = mobileMenuButton.querySelector('.close-icon');
-
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            openIcon.classList.toggle('hidden');
-            closeIcon.classList.toggle('hidden');
-        });
-
-        function copyToClipboard(elementId) {
-            const element = document.getElementById(elementId);
-            const text = element.textContent.trim();
-            const copyButton = document.getElementById(`copy-button-${elementId.split('-').pop()}`);
-            const copyMessage = document.getElementById(`copy-message-${elementId.split('-').pop()}`);
-
-            navigator.clipboard.writeText(text)
-                .then(() => {
-                    copyButton.classList.add('bg-vipentium-primary-green', 'text-white');
-                    copyButton.innerHTML = '<i class="fas fa-check"></i> Copied!';
-                    copyMessage.classList.remove('opacity-0');
-                    setTimeout(() => {
-                        copyMessage.classList.add('opacity-0');
-                        copyButton.classList.remove('bg-vipentium-primary-green', 'text-white');
-                        copyButton.innerHTML = '<i class="fas fa-copy"></i> Copy';
-                    }, 1500);
-                })
-                .catch(err => {
-                    console.error('Could not copy text: ', err);
-                    alert('Could not copy text. Please try again.');
-                });
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const revealElements = document.querySelectorAll('[data-reveal]');
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const element = entry.target;
-                        element.classList.remove('opacity-0', 'translate-y-[-10px]');
-                        element.setAttribute('data-revealed', 'true');
-                        observer.unobserve(element);
-                    }
-                });
-            }, { threshold: 0.2 });
-
-            revealElements.forEach(element => {
-                observer.observe(element);
-            });
-        });
-
-        function copyToClipboard(elementId) {
-  const textToCopy = document.getElementById(elementId).textContent;
-
-  navigator.clipboard.writeText(textToCopy)
-    .then(() => {
-      const copyButtonId = `copy-button-${elementId.split('-').pop()}`;
-      const copyMessageId = `copy-message-${elementId.split('-').pop()}`;
-      const copyButton = document.getElementById(copyButtonId);
-      const copyMessage = document.getElementById(copyMessageId);
-
-      if (copyMessage) {
-        copyMessage.classList.remove('opacity-0');
-        setTimeout(() => {
-          copyMessage.classList.add('opacity-0');
-        }, 1500);
-      }
-    })
-    .catch(err => {
-      console.error('Failed to copy text: ', err);
-      alert('Failed to copy text to clipboard. Please try again.');
-    });
-}
-    </script>
+    <script src="scripts/vipscript.js"></script>
 </body>
 </html>
