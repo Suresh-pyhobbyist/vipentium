@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vipentium - The Modern Python Testing Framework</title>
+  <link rel="icon" href="https://raw.githubusercontent.com/Suresh-pyhobbyist/vipentium/f8a137e0de4e89fc4600b08a3d3f6dd51258f06b/vipentium.svg" type="image/svg+xml">
+  <!-- Tailwind CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" 
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Custom Styles (can be in an external file as needed) -->
+  <style>
+    /* Vipentium Color & Typography */
+    .vipentium-primary-green {
+      color: #2BC241;
+    }
+    .vipentium-secondary-green {
+      color: #76E322;
+    }
+    .vipentium-bg-primary-green {
+      background-color: #2BC241;
+    }
+    .vipentium-bg-secondary-green {
+      background-color: #76E322;
+    }
+    /* Code Block */
+    .vipentium-code-block {
+      background-color: #1e293b;
+      color: #f8fafc;
+      padding: 1rem;
+      border-radius: 0.375rem;
+      font-family: monospace;
+      overflow-x: auto;
+      white-space: pre-wrap;
+    }
+    /* Button Styles */
+    .vipentium-btn {
+      display: inline-block;
+      padding: 8px 16px;
+      margin: 4px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    .vipentium-btn-confirm {
+      background-color: #2BC241;
+      color: white;
+    }
+    .vipentium-btn-confirm:hover {
+      background-color: #76E322;
+    }
+    /* Container with horizontal padding (100px on desktop) */
+    .vipentium-container {
+      padding-left: 100px;
+      padding-right: 100px;
+    }
+    @media (max-width: 768px) {
+      .vipentium-container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+    }
+    /* Progress Tracker */
+    .vipentium-step-circle {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #ddd;
+      color: #333;
+      margin-right: 10px;
+      font-weight: bold;
+    }
+    .vipentium-step-circle.completed {
+      background-color: #2BC241;
+      color: white;
+    }
+    .vipentium-step-line {
+      flex: 1;
+      height: 4px;
+      background-color: #ddd;
+      margin: 0 10px;
+    }
+    /* Setup Guide Navigation Buttons */
+    .vipentium-nav-btn {
+      border: 1px solid transparent;
+      padding: 0.5rem 1rem;
+      border-radius: 0.375rem;
+      transition: border-color 0.3s ease, color 0.3s ease;
+    }
+    .vipentium-nav-btn:hover {
+      border-color: #2BC241;
+      color: #2BC241;
+    }
+  </style>
+</head>
+<body class="vipentium-bg-gray-100 font-sans antialiased">
+  <!-- Top Navigation -->
+  <nav class="vipentium-bg-white shadow-md py-4 sticky top-0 z-50">
+    <div class="container mx-auto flex justify-between items-center px-4 md:px-6 lg:px-8 xl:px-10 2xl:px-12" style="max-width: 1600px;">
+      <a href="https://suresh-pyhobbyist.github.io/vipentium/index.html" class="text-xl font-semibold transition-fast hover:vipentium-primary-green">
+        <img src="https://raw.githubusercontent.com/Suresh-pyhobbyist/vipentium/f8a137e0de4e89fc4600b08a3d3f6dd51258f06b/vipentium.svg" alt="Vipentium Logo" class="h-8" />
+      </a>
+      <div class="md:hidden">
+        <button id="mobile-menu-button" class="text-gray-600 hover:vipentium-primary-green focus:outline-none focus:ring-2 focus:ring-vipentium-primary-green">
+          <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M3 5H21V7H3V5ZM3 11H21V13H3V11ZM3 17H21V19H3V17Z"/>
+          </svg>
+        </button>
+      </div>
+      <div class="hidden md:flex space-x-6 items-center">
+        <a href="#features" class="vipentium-nav-link text-gray-700 hover:vipentium-primary-green transition-fast">Home</a>
+        <a href="https://suresh-pyhobbyist.github.io/vipentium/pages/docs.html" class="vipentium-nav-link text-gray-700 hover:vipentium-primary-green transition-fast">Docs</a>
+         <a href="https://suresh-pyhobbyist.github.io/vipentium/pages/setupguide.html" class="vipentium-nav-link text-gray-700 hover:vipentium-primary-green transition-fast">Setup</a>
+        <a href="https://pypi.org/project/vipentium/" target="_blank" class="vipentium-bg-primary-green hover:vipentium-bg-secondary-green text-white font-semibold py-2 px-4 rounded-full shadow-sm transition-fast">Install via pip</a>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden vipentium-bg-white shadow-md absolute top-full left-0 w-full z-50">
+      <div class="px-4 py-2 flex flex-col space-y-2">
+        <a href="#features" class="text-gray-700 hover:vipentium-primary-green block py-2">Home</a>
+        <a href="https://suresh-pyhobbyist.github.io/vipentium/pages/docs.html" class="text-gray-700 hover:vipentium-primary-green block py-2">Docs</a>
+         <a href="https://suresh-pyhobbyist.github.io/vipentium/pages/setupguide.html" class="vipentium-nav-link text-gray-700 hover:vipentium-primary-green transition-fast">Setup</a>
+        <a href="https://pypi.org/project/vipentium/" target="_blank" class="vipentium-bg-primary-green hover:vipentium-bg-secondary-green text-white font-semibold py-2 px-4 rounded-full shadow-sm transition-fast block text-center">Install via pip</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Setup Guide Wizard Section -->
+  <div class="vipentium-container mx-auto py-8">
+    <!-- Progress Tracker -->
+    <div class="flex items-center justify-center mb-4">
+      <div class="vipentium-step-circle" id="circle-0">1</div>
+      <div class="vipentium-step-line" id="line-0"></div>
+      <div class="vipentium-step-circle" id="circle-1">2</div>
+      <div class="vipentium-step-line" id="line-1"></div>
+      <div class="vipentium-step-circle" id="circle-2">3</div>
+      <div class="vipentium-step-line" id="line-2"></div>
+      <div class="vipentium-step-circle" id="circle-3">4</div>
+    </div>
+    <!-- Setup Guide Navigation (Click to jump to any step) -->
+    <div id="setup-nav" class="flex justify-center space-x-4 mb-4">
+      <button class="vipentium-nav-btn" onclick="goToStep(0)">Install Vipentium</button>
+      <button class="vipentium-nav-btn" onclick="goToStep(1)">Write Test Case</button>
+      <button class="vipentium-nav-btn" onclick="goToStep(2)">Run Demo</button>
+      <button class="vipentium-nav-btn" onclick="goToStep(3)">Finish Setup</button>
+    </div>
+    <!-- Wizard Content Area -->
+    <div id="wizard" class="bg-white p-8 rounded-lg shadow-lg">
+      <div id="stepContent">
+        <!-- Step 1: Install Vipentium -->
+        <div class="wizard-step" id="step-0">
+          <h2 class="vipentium-secondary-green text-2xl font-semibold mb-4">Step 1: Install Vipentium</h2>
+          <p class="mb-4">Open your terminal and run:</p>
+          <div class="vipentium-code-block mb-4">
+pip install vipentium
+          </div>
+          <div class="flex justify-end">
+            <button class="vipentium-btn vipentium-btn-confirm" onclick="markStepComplete(0)">Mark as Completed</button>
+            <button class="vipentium-btn vipentium-btn-confirm" onclick="nextStep()">Next</button>
+          </div>
+        </div>
+
+        <!-- Step 2: Write Test Case Example -->
+        <div class="wizard-step hidden" id="step-1">
+          <h2 class="vipentium-secondary-green text-2xl font-semibold mb-4">Step 2: Write Test Case</h2>
+          <p class="mb-4">Create a test file (e.g., <code>test_example.py</code>) with the following example:</p>
+          <div class="vipentium-code-block mb-4">
+@mark("math")
+class TestMathFunctions(TestCase):
+    @parameters((5, 2, 7), (10, -3, 7), (0, 0, 0))
+    def test_add_parameterized(self, a, b, expected):
+        self.assert_equal(a + b, expected)
+
+    def test_division(self):
+        self.assert_equal(10 / 2, 5)
+
+    def test_float_equality(self):
+        self.assert_equal(3.14, 3.14)
+          </div>
+          <div class="flex justify-between">
+            <button class="vipentium-btn vipentium-btn-confirm" onclick="prevStep()">Previous</button>
+            <div>
+              <button class="vipentium-btn vipentium-btn-confirm mr-2" onclick="markStepComplete(1)">Mark as Completed</button>
+              <button class="vipentium-btn vipentium-btn-confirm" onclick="nextStep()">Next</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3: Run Demo -->
+        <div class="wizard-step hidden" id="step-2">
+          <h2 class="vipentium-secondary-green text-2xl font-semibold mb-4">Step 3: Run Demo</h2>
+          <p class="mb-4">Execute your tests with the following command:</p>
+          <div class="vipentium-code-block mb-4">
+vipentium-runner test_example.py --parallel
+          </div>
+          <div class="flex justify-between">
+            <button class="vipentium-btn vipentium-btn-confirm" onclick="prevStep()">Previous</button>
+            <div>
+              <button class="vipentium-btn vipentium-btn-confirm mr-2" onclick="markStepComplete(2)">Mark as Completed</button>
+              <button class="vipentium-btn vipentium-btn-confirm" onclick="nextStep()">Next</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 4: Finish Setup -->
+        <div class="wizard-step hidden" id="step-3">
+          <h2 class="vipentium-primary-green text-2xl font-semibold mb-4">Step 4: Finish Setup</h2>
+          <p class="mb-4">Click the button below to complete the setup process.</p>
+          <div class="flex justify-between">
+            <button class="vipentium-btn vipentium-btn-confirm" onclick="prevStep()">Previous</button>
+            <button class="vipentium-btn vipentium-btn-confirm" onclick="finishSetup()">Finish Setup</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Final Message Container (Appears after finishing) -->
+    <div id="finalMessage" class="hidden bg-white p-8 rounded-lg shadow-lg text-center mt-8">
+      <h2 class="vipentium-primary-green text-3xl font-bold mb-4">Setup Complete!</h2>
+      <p class="mb-4">Congratulations! You have successfully set up Vipentium using the example test.</p>
+      <button class="vipentium-btn vipentium-btn-confirm" onclick="location.reload()">Restart Setup</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-gray-100 py-8 text-center text-gray-600 text-sm transition-colors duration-300">
+    <div class="container mx-auto flex flex-col items-center justify-center space-y-2 sm:space-y-3">
+      <div class="flex items-center justify-center">
+        <a href="https://github.com/Suresh-pyhobbyist/vipentium" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition-opacity" style="margin-top: -10px;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github">
+            <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.3-.87 2.23a4 4 0 0 1-1.13 1.27v4"></path>
+            <path d="M9 18c-4.51 2-5-2-7-2"></path>
+          </svg>
+        </a>
+      </div>
+      <p class="text-gray-700 font-medium">
+        &copy; <span id="copyright-year"></span> Vipentium - Test with Modernity. All rights reserved.
+      </p>
+    </div>
+    <script>
+      document.getElementById('copyright-year').textContent =
+        new Date().getFullYear();
+    </script>
+  </footer>
+  
+  <!-- Wizard Script -->
+  <script>
+    let currentStep = 0;
+    const steps = document.querySelectorAll('.wizard-step');
+
+    function showStep(stepIndex) {
+      steps.forEach((step, idx) => {
+        step.classList.toggle('hidden', idx !== stepIndex);
+      });
+      updateProgressTracker();
+    }
+
+    function updateProgressTracker() {
+      for (let i = 0; i < steps.length; i++) {
+        const circle = document.getElementById('circle-' + i);
+        if (i <= currentStep) {
+          circle.classList.add('completed');
+        } else {
+          circle.classList.remove('completed');
+        }
+        if (i < steps.length - 1) {
+          const line = document.getElementById('line-' + i);
+          line.style.backgroundColor = (i < currentStep) ? '#2BC241' : '#ddd';
+        }
+      }
+    }
+
+    function markStepComplete(stepIndex) {
+      const circle = document.getElementById('circle-' + stepIndex);
+      circle.classList.add('completed');
+    }
+
+    function nextStep() {
+      if (currentStep < steps.length - 1) {
+        currentStep++;
+        showStep(currentStep);
+      }
+    }
+
+    function prevStep() {
+      if (currentStep > 0) {
+        currentStep--;
+        showStep(currentStep);
+      }
+    }
+
+    function goToStep(step) {
+      currentStep = step;
+      showStep(currentStep);
+    }
+
+    function finishSetup() {
+      // Hide the wizard area and show the final message container.
+      document.getElementById('wizard').classList.add('hidden');
+      document.getElementById('finalMessage').classList.remove('hidden');
+    }
+
+    // Initialize the wizard.
+    showStep(currentStep);
+  </script>
+</body>
+</html>
