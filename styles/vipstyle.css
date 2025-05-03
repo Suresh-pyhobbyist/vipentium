@@ -215,5 +215,7 @@
       }
 
 nav.vipentium-bg-white.shadow-md.py-4.sticky.top-0.z-50 {
-    background: white;
+    background: white !important;
 }
+
+
