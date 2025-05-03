@@ -132,7 +132,7 @@
     </div>
   </nav>
 
-  <!-- Setup Guide Wizard Section -->
+ <!-- Setup Guide Wizard Section -->
   <div class="vipentium-container mx-auto py-8">
     <!-- Progress Tracker -->
     <div class="flex items-center justify-center mb-4">
@@ -143,13 +143,6 @@
       <div class="vipentium-step-circle" id="circle-2">3</div>
       <div class="vipentium-step-line" id="line-2"></div>
       <div class="vipentium-step-circle" id="circle-3">4</div>
-    </div>
-    <!-- Setup Guide Navigation (Click to jump to any step) -->
-    <div id="setup-nav" class="flex justify-center space-x-4 mb-4">
-      <button class="vipentium-nav-btn" onclick="goToStep(0)">Install Vipentium</button>
-      <button class="vipentium-nav-btn" onclick="goToStep(1)">Write Test Case</button>
-      <button class="vipentium-nav-btn" onclick="goToStep(2)">Run Demo</button>
-      <button class="vipentium-nav-btn" onclick="goToStep(3)">Finish Setup</button>
     </div>
     <!-- Wizard Content Area -->
     <div id="wizard" class="bg-white p-8 rounded-lg shadow-lg">
@@ -166,7 +159,6 @@ pip install vipentium
             <button class="vipentium-btn vipentium-btn-confirm" onclick="nextStep()">Next</button>
           </div>
         </div>
-
         <!-- Step 2: Write Test Case Example -->
         <div class="wizard-step hidden" id="step-1">
           <h2 class="vipentium-secondary-green text-2xl font-semibold mb-4">Step 2: Write Test Case</h2>
@@ -192,7 +184,6 @@ class TestMathFunctions(TestCase):
             </div>
           </div>
         </div>
-
         <!-- Step 3: Run Demo -->
         <div class="wizard-step hidden" id="step-2">
           <h2 class="vipentium-secondary-green text-2xl font-semibold mb-4">Step 3: Run Demo</h2>
@@ -208,7 +199,6 @@ vipentium-runner test_example.py --parallel
             </div>
           </div>
         </div>
-
         <!-- Step 4: Finish Setup -->
         <div class="wizard-step hidden" id="step-3">
           <h2 class="vipentium-primary-green text-2xl font-semibold mb-4">Step 4: Finish Setup</h2>
@@ -220,7 +210,6 @@ vipentium-runner test_example.py --parallel
         </div>
       </div>
     </div>
-
     <!-- Final Message Container (Appears after finishing) -->
     <div id="finalMessage" class="hidden bg-white p-8 rounded-lg shadow-lg text-center mt-8">
       <h2 class="vipentium-primary-green text-3xl font-bold mb-4">Setup Complete!</h2>
