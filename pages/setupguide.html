@@ -90,39 +90,36 @@
   </style>
 </head>
 <body class="vipentium-bg-gray-100 font-sans antialiased flex flex-col min-h-screen">
-  <!-- Top Navigation -->
   <nav class="vipentium-bg-white shadow-md py-4 sticky top-0 z-50">
-    <div class="container mx-auto flex justify-between items-center px-4 md:px-6 lg:px-8 xl:px-10 2xl:px-12" style="max-width: 1600px;">
-      <a href="https://suresh-pyhobbyist.github.io/vipentium/index.html" class="text-xl font-semibold transition-fast hover:vipentium-primary-green">
-        <img src="https://raw.githubusercontent.com/Suresh-pyhobbyist/vipentium/f8a137e0de4e89fc4600b08a3d3f6dd51258f06b/vipentium.svg" alt="Vipentium Logo" class="h-8" />
-      </a>
-      <div class="md:hidden">
-        <button id="mobile-menu-button" class="text-gray-600 hover:vipentium-primary-green focus:outline-none focus:ring-2 focus:ring-vipentium-primary-green">
-          <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M3 5H21V7H3V5ZM3 11H21V13H3V11ZM3 17H21V19H3V17Z"/>
-          </svg>
-        </button>
-      </div>
-      <div class="hidden md:flex space-x-6 items-center">
-        <a href="https://suresh-pyhobbyist.github.io/vipentium/index.html" class="vipentium-nav-link text-gray-700 hover:vipentium-primary-green transition-fast">Home</a>
-        <a href="https://suresh-pyhobbyist.github.io/vipentium/pages/docs.html" class="vipentium-nav-link text-gray-700 hover:vipentium-primary-green transition-fast">Docs</a>
-        <a href="https://suresh-pyhobbyist.github.io/vipentium/pages/setupguide.html" class="vipentium-nav-link text-gray-700 hover:vipentium-primary-green transition-fast">Setup</a>
-        <a href="https://pypi.org/project/vipentium/" target="_blank" class="vipentium-bg-primary-green hover:vipentium-bg-secondary-green text-white font-semibold py-2 px-4 rounded-full shadow-sm transition-fast">
-          Install via pip
+  <div class="max-w-7xl mx-auto flex justify-between items-center px-4 md:px-6 lg:px-8" style="max-width:1600px;">
+    <!-- Logo -->
+        <a href="https://suresh-pyhobbyist.github.io/vipentium/index.html" class="text-xl font-semibold transition-fast hover:vipentium-primary-green">
+            <img src="https://raw.githubusercontent.com/Suresh-pyhobbyist/vipentium/f8a137e0de4e89fc4600b08a3d3f6dd51258f06b/vipentium.svg" alt="Vipentium Logo" class="h-8" />
         </a>
-      </div>
+    <!-- Desktop menu -->
+    <div class="hidden md:flex space-x-6 items-center">
+      <a href="https://suresh-pyhobbyist.github.io/vipentium/index.html" class="transition-fast text-gray-700 hover:text-vipentium-secondary-green">Home</a>
+      <a href="https://suresh-pyhobbyist.github.io/vipentium/pages/docs.html" class="transition-fast text-gray-700 hover:text-vipentium-secondary-green">Docs</a>
+      <a href="https://suresh-pyhobbyist.github.io/vipentium/pages/setupguide.html" class="vipentium-nav-link text-gray-700 hover:vipentium-primary-green transition-fast">Setup</a>
+      <a href="https://pypi.org/project/vipentium/" target="_blank" class="vipentium-bg-primary-green hover:vipentium-bg-secondary-green text-white font-semibold py-2 px-4 rounded-full shadow-sm transition-fast">Install via pip</a>
     </div>
-    <div id="mobile-menu" class="hidden vipentium-bg-white shadow-md absolute top-full left-0 w-full z-50">
-      <div class="px-4 py-2 flex flex-col space-y-2">
-        <a href="https://suresh-pyhobbyist.github.io/vipentium/index.html" class="text-gray-700 hover:vipentium-primary-green block py-2">Home</a>
-        <a href="https://suresh-pyhobbyist.github.io/vipentium/pages/docs.html" class="text-gray-700 hover:vipentium-primary-green block py-2">Docs</a>
-        <a href="https://suresh-pyhobbyist.github.io/vipentium/pages/setupguide.html" class="text-gray-700 hover:vipentium-primary-green block py-2">Setup</a>
-        <a href="https://pypi.org/project/vipentium/" target="_blank" class="vipentium-bg-primary-green hover:vipentium-bg-secondary-green text-white font-semibold py-2 px-4 rounded-full shadow-sm transition-fast block text-center">
-          Install via pip
-        </a>
-      </div>
+    <!-- Mobile menu toggle -->
+    <div class="md:hidden z-50">
+      <button id="mobile-menu-toggle" aria-label="Menu" class="focus:outline-none p-2">
+        <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
     </div>
-  </nav>
+  </div>
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden absolute top-full left-0 w-full z-40 bg-white shadow-md">
+    <a href="https://suresh-pyhobbyist.github.io/vipentium/index.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Home</a>
+    <a href="https://suresh-pyhobbyist.github.io/vipentium/pages/docs.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Docs</a>
+    <a href="https://suresh-pyhobbyist.github.io/vipentium/pages/setupguide.html" class="vipentium-nav-link text-gray-700 hover:vipentium-primary-green transition-fast">Setup</a>
+    <a href="https://pypi.org/project/vipentium/" target="_blank" class="vipentium-bg-primary-green hover:vipentium-bg-secondary-green text-white font-semibold py-2 px-4 rounded-full shadow-sm transition-fast block text-center">Install via pip</a>
+  </div>
+</nav>
 
   <!-- Main Content -->
   <main class="flex-grow mb-24">
