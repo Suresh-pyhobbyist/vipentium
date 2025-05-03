@@ -293,6 +293,16 @@ vipentium-runner test_example.py --parallel
 
     // Initialize the wizard.
     showStep(currentStep);
+
+  document.getElementById('copyright-year').textContent = new Date().getFullYear();
+  
+  document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.getElementById("mobile-menu-toggle");
+    const menu = document.getElementById("mobile-menu");
+    btn.addEventListener("click", () => {
+      menu.classList.toggle("hidden");
+    });
+  });
   </script>
 </body>
 </html>
