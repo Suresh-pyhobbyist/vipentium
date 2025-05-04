@@ -185,7 +185,7 @@ class TestListManipulation(TestCase):
 To run your tests, simply execute vipentium with your test file. For example:
 
 ```bash
-vipentium test_example.py
+vipentium-runner test_example.py
 ```
 
 ### 📊 Expected Output
