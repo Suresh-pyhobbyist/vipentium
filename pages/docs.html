@@ -247,48 +247,49 @@ footer {
 
   <!-- Main Content Area -->
   <!-- Added vipentium-container for horizontal padding on larger screens -->
-  <main class="main-content p-6 space-y-12 vipentium-container flex-grow mb-24"> <!-- Added flex-grow and mb-24 for footer spacing -->
-    <!-- Section 1: Installation & Setup -->
-    <section id="installation">
-      <h1 class="vipentium-primary-green text-3xl font-bold mb-1">1. Installation & Setup 🛠️</h1>
-      <p class="mb-1">
-        Before you start creating tests, you need to install VIPENTIUM. This step is crucial because it sets up all the necessary tools and libraries to discover and run your tests automatically.
-      </p>
-      <p class="mb-1 font-semibold">Why?</p>
-      <p class="mb-1">
-        Installing via pip ensures you get the latest stable version, compatibility with your environment, and access to updates.
-      </p>
-      <p class="mb-2 font-semibold">Command:</p>
-      <div class="vipentium-code-block relative mb-1">
-        <button class="vipentium-copy-btn" onclick="copyToClipboard(this)">Copy</button>
-        <pre>pip install vipentium</pre>
-      </div>
-      <p>
-        Once this command runs successfully, VIPENTIUM is installed globally (or in your virtual environment) and is ready for use in your projects.
-      </p>
-    </section>
+  <main class="main-content p-6 space-y-12 vipentium-container flex-grow mb-24">
+  <!-- Section 1: Installation & Setup -->
+  <section id="installation">
+    <h1 class="vipentium-primary-green text-2xl sm:text-3xl font-bold mb-4">1. Installation & Setup 🛠️</h1>
+    <p class="mb-4 text-gray-700 text-sm sm:text-base">
+      Before you start creating tests, you need to install VIPENTIUM. This step is crucial because it sets up all the necessary tools and libraries to discover and run your tests automatically.
+    </p>
+    <p class="mb-2 font-semibold text-gray-800 text-sm sm:text-base">Why?</p>
+    <p class="mb-6 text-gray-700 text-sm sm:text-base">
+      Installing via pip ensures you get the latest stable version, compatibility with your environment, and access to updates.
+    </p>
+    <p class="mb-2 font-semibold text-gray-800 text-sm sm:text-base">Command:</p>
+    <div class="vipentium-code-block relative mb-6">
+      <button class="vipentium-copy-btn" onclick="copyToClipboard(this)">Copy</button>
+      <pre class="text-sm sm:text-base">pip install vipentium</pre>
+    </div>
+    <p class="text-gray-700 text-sm sm:text-base">
+      Once this command runs successfully, VIPENTIUM is installed globally (or in your virtual environment) and is ready for use in your projects.
+    </p>
+  </section>
 
+  <!-- Section 2: Detailed Command‑Line Options for Vipentium -->
+  <section id="command-line-options">
+    <h1 class="text-2xl sm:text-3xl font-bold vipentium-primary-green mb-4">
+      🔍 2. Detailed Command‑Line Options for Vipentium
+    </h1>
+    <p class="mb-6 text-gray-700 text-sm sm:text-base">
+      Vipentium supports a number of command‑line options so you can customize how tests are discovered, executed, and reported.
+      Below is an in‑depth explanation for each option, including when to use it, what it does, and sample commands. 🚀
+    </p>
 
-    <section id="command-line-options" class="mb-12">
-      <h1 class="text-3xl font-bold vipentium-primary-green mb-1">
-        🔍 2. Detailed Command‑Line Options for Vipentium
-      </h1>
-      <p class="mb-1 text-gray-700">
-        Vipentium supports a number of command‑line options so you can customize how tests are discovered, executed, and reported.
-        Below is an in‑depth explanation for each option, including when to use it, what it does, and sample commands. 🚀
-      </p>
-
-      <!-- <test_path> option -->
-      <h2 class="text-2xl font-semibold vipentium-primary-green mb-2">
-        📁 <test_path>
+    <!-- <test_path> option -->
+    <div class="mb-8">
+      <h2 class="text-xl sm:text-2xl font-semibold vipentium-primary-green mb-3">
+        📁 &lt;test_path&gt;
       </h2>
-      <p class="mb-1 text-gray-700">
-        The <code><test_path></code> specifies the relative or absolute path to your test files, directories, or modules.
+      <p class="mb-4 text-gray-700 text-sm sm:text-base">
+        The <code>&lt;test_path&gt;</code> specifies the relative or absolute path to your test files, directories, or modules.
         Vipentium automatically discovers tests that start with <code>test_</code>, so using the correct path is key. ✅
       </p>
-      <div class="vipentium-code-block relative mb-1">
+      <div class="vipentium-code-block relative mb-4">
         <button class="vipentium-copy-btn" onclick="copyToClipboard(this)">Copy</button>
-        <pre>
+        <pre class="text-sm sm:text-base">
 # Running tests in a directory:
 vipentium-runner tests/
 
@@ -297,210 +298,223 @@ vipentium-runner tests/test_example.py
 
 # Running tests in a module:
 vipentium-runner tests.my_module
-    </pre>
+        </pre>
       </div>
+    </div>
 
-      <!-- --parallel option -->
-      <h2 class="text-2xl font-semibold vipentium-primary-green mb-2">
+    <!-- --parallel option -->
+    <div class="mb-8">
+      <h2 class="text-xl sm:text-2xl font-semibold vipentium-primary-green mb-3">
         ⏩ --parallel
       </h2>
-      <p class="mb-1 text-gray-700">
+      <p class="mb-4 text-gray-700 text-sm sm:text-base">
         Use <code>--parallel</code> to enable parallel execution (via threads) of your tests.
         This option can dramatically reduce test runtime for large suites. ⚡
       </p>
-      <div class="vipentium-code-block relative mb-1">
+      <div class="vipentium-code-block relative mb-4">
         <button class="vipentium-copy-btn" onclick="copyToClipboard(this)">Copy</button>
-        <pre>
+        <pre class="text-sm sm:text-base">
 # Run tests in parallel:
 vipentium-runner tests/ --parallel
-    </pre>
+        </pre>
       </div>
-      <p class="mb-1 text-gray-700">
+      <p class="text-gray-700 text-sm sm:text-base">
         <strong>Note:</strong> Parallel execution works best when tests don't share mutable state. 🔒
       </p>
+    </div>
 
-      <!-- --process option -->
-      <h2 class="text-2xl font-semibold vipentium-primary-green mb-2">
+    <!-- --process option -->
+    <div class="mb-8">
+      <h2 class="text-xl sm:text-2xl font-semibold vipentium-primary-green mb-3">
         🖥️ --process
       </h2>
-      <p class="mb-1 text-gray-700">
+      <p class="mb-4 text-gray-700 text-sm sm:text-base">
         The <code>--process</code> option runs tests in separate processes rather than threads.
         This gives you better isolation, useful if tests might interfere with each other or if you need to bypass the GIL. 🔄
       </p>
-      <div class="vipentium-code-block relative mb-1">
+      <div class="vipentium-code-block relative mb-4">
         <button class="vipentium-copy-btn" onclick="copyToClipboard(this)">Copy</button>
-        <pre>
+        <pre class="text-sm sm:text-base">
 # Run tests in separate processes for isolation:
 vipentium-runner tests/ --parallel --process
-    </pre>
+        </pre>
       </div>
-      <p class="mb-1 text-gray-700">
+      <p class="text-gray-700 text-sm sm:text-base">
         <strong>Tip:</strong> Use <code>--process</code> together with <code>--parallel</code> for maximum isolation. 👌
       </p>
+    </div>
 
-      <!-- --verbose option -->
-      <h2 class="text-2xl font-semibold vipentium-primary-green mb-2">
+    <!-- --verbose option -->
+    <div class="mb-8">
+      <h2 class="text-xl sm:text-2xl font-semibold vipentium-primary-green mb-3">
         📣 --verbose
       </h2>
-      <p class="mb-1 text-gray-700">
+      <p class="mb-4 text-gray-700 text-sm sm:text-base">
         The <code>--verbose</code> option provides detailed output for each test, which can help with debugging and analysis.
         More information is printed about the execution process. 🔍
       </p>
-      <div class="vipentium-code-block relative mb-1">
+      <div class="vipentium-code-block relative mb-4">
         <button class="vipentium-copy-btn" onclick="copyToClipboard(this)">Copy</button>
-        <pre>
+        <pre class="text-sm sm:text-base">
 vipentium-runner tests/ --verbose
-    </pre>
+        </pre>
       </div>
+    </div>
 
-      <!-- --report-json option -->
-      <h2 class="text-2xl font-semibold vipentium-primary-green mb-2">
-        📄 --report-json <filename>
+    <!-- --report-json option -->
+    <div class="mb-8">
+      <h2 class="text-xl sm:text-2xl font-semibold vipentium-primary-green mb-3">
+        📄 --report-json &lt;filename&gt;
       </h2>
-      <p class="mb-1 text-gray-700">
-        The <code>--report-json <filename></code> option produces a JSON report summarizing your test run,
+      <p class="mb-4 text-gray-700 text-sm sm:text-base">
+        The <code>--report-json &lt;filename&gt;</code> option produces a JSON report summarizing your test run,
         including test counts, pass/fail statistics, and execution details. Perfect for CI/CD integration. 🤖
       </p>
-      <div class="vipentium-code-block relative mb-1">
+      <div class="vipentium-code-block relative mb-4">
         <button class="vipentium-copy-btn" onclick="copyToClipboard(this)">Copy</button>
-        <pre>
+        <pre class="text-sm sm:text-base">
 vipentium-runner tests/ --report-json report.json
-    </pre>
+        </pre>
       </div>
+    </div>
 
-      <!-- --report-html option -->
-      <h2 class="text-2xl font-semibold vipentium-primary-green mb-2">
-        🖥️ --report-html <filename>
+    <!-- --report-html option -->
+    <div class="mb-8">
+      <h2 class="text-xl sm:text-2xl font-semibold vipentium-primary-green mb-3">
+        🖥️ --report-html &lt;filename&gt;
       </h2>
-      <p class="mb-1 text-gray-700">
-        The <code>--report-html <filename></code> option outputs a human‑readable HTML report summarizing your test run.
+      <p class="mb-4 text-gray-700 text-sm sm:text-base">
+        The <code>--report-html &lt;filename&gt;</code> option outputs a human‑readable HTML report summarizing your test run.
         This report makes it easy to visually review and share results with your team. 🎨
       </p>
-      <div class="vipentium-code-block relative mb-1">
+      <div class="vipentium-code-block relative mb-4">
         <button class="vipentium-copy-btn" onclick="copyToClipboard(this)">Copy</button>
-        <pre>
+        <pre class="text-sm sm:text-base">
 vipentium-runner tests/ --report-html report.html
-    </pre>
+        </pre>
       </div>
+    </div>
 
-      <!-- --mark option -->
-      <h2 class="text-2xl font-semibold vipentium-primary-green mb-2">
-        🔖 --mark <marker>
+    <!-- --mark option -->
+    <div class="mb-8">
+      <h2 class="text-xl sm:text-2xl font-semibold vipentium-primary-green mb-3">
+        🔖 --mark &lt;marker&gt;
       </h2>
-      <p class="mb-1 text-gray-700">
-        The <code>--mark <marker></code> option filters tests based on a custom marker,
+      <p class="mb-4 text-gray-700 text-sm sm:text-base">
+        The <code>--mark &lt;marker&gt;</code> option filters tests based on a custom marker,
         specified using the <code>@mark</code> decorator. It allows you to run only tests with certain tags (e.g., "integration", "critical"). 🔍
       </p>
-      <div class="vipentium-code-block relative mb-1">
+      <div class="vipentium-code-block relative mb-4">
         <button class="vipentium-copy-btn" onclick="copyToClipboard(this)">Copy</button>
-        <pre>
+        <pre class="text-sm sm:text-base">
 # Run tests marked as "integration":
 vipentium-runner tests/ --mark integration
 
 # Run tests with multiple markers:
 vipentium-runner tests/ --mark database --mark critical
-    </pre>
+        </pre>
       </div>
-      <p class="mb-1 text-gray-700">
+      <p class="text-gray-700 text-sm sm:text-base">
         Selecting specific markers saves time and helps in targeted debugging. 🎯
       </p>
-    </section>
+    </div>
+  </section>
 
-    <!-- Section 2: Writing Test Cases -->
-    <section id="writing-tests">
-      <h2 class="vipentium-primary-green text-3xl font-bold mb-1">2. Writing Test Cases ✍️</h2>
+  <!-- Section 3: Writing Test Cases -->
+  <section id="writing-tests">
+    <h2 class="vipentium-primary-green text-2xl sm:text-3xl font-bold mb-4">3. Writing Test Cases ✍️</h2>
 
-      <!-- 2.1: Test File Naming -->
-      <div class="mb-8">
-        <h3 class="text-2xl font-semibold mb-2">Step 2.1: Test File Naming 📁</h3>
-        <p class="mb-2">
-          <strong>What to Do:</strong> Name your test files with the <code class="font-mono">test_</code> prefix (e.g., <code class="font-mono">test_utils.py</code>).
-        </p>
-        <p class="mb-2">
-          <strong>Why?</strong> This naming convention signals VIPENTIUM to automatically discover and collect tests during the execution phase.
-        </p>
-        <p>
-          <em>Example File Names:</em>
-          <br>- <code class="font-mono">test_calculator.py</code>
-          <br>- <code class="font-mono">test_string_methods.py</code>
-        </p>
-      </div>
+    <!-- 3.1: Test File Naming -->
+    <div class="mb-8">
+      <h3 class="text-xl sm:text-2xl font-semibold mb-3">Step 3.1: Test File Naming 📁</h3>
+      <p class="mb-2 text-gray-700 text-sm sm:text-base">
+        <strong>What to Do:</strong> Name your test files with the <code class="font-mono">test_</code> prefix (e.g., <code class="font-mono">test_utils.py</code>).
+      </p>
+      <p class="mb-4 text-gray-700 text-sm sm:text-base">
+        <strong>Why?</strong> This naming convention signals VIPENTIUM to automatically discover and collect tests during the execution phase.
+      </p>
+      <p class="text-gray-700 text-sm sm:text-base">
+        <em>Example File Names:</em>
+        <br>- <code class="font-mono">test_calculator.py</code>
+        <br>- <code class="font-mono">test_string_methods.py</code>
+      </p>
+    </div>
 
-      <!-- 2.2: Test Class Definition -->
-      <div class="mb-8">
-        <h3 class="text-2xl font-semibold mb-2">Step 2.2: Test Class Definition 🏗️</h3>
-        <p class="mb-2">
-          <strong>What to Do:</strong> Create a test class that inherits from the <code class="font-mono">TestCase</code> base class provided by VIPENTIUM.
-        </p>
-        <p class="mb-2">
-          <strong>Why?</strong> Inheriting from <code class="font-mono">TestCase</code> gives your class built‑in assertion methods and a standardized testing interface.
-        </p>
-        <div class="vipentium-code-block relative my-4">
-          <button class="vipentium-copy-btn" onclick="copyToClipboard(this)">Copy</button>
-          <pre>from vipentium import TestCase
+    <!-- 3.2: Test Class Definition -->
+    <div class="mb-8">
+      <h3 class="text-xl sm:text-2xl font-semibold mb-3">Step 3.2: Test Class Definition 🏗️</h3>
+      <p class="mb-2 text-gray-700 text-sm sm:text-base">
+        <strong>What to Do:</strong> Create a test class that inherits from the <code class="font-mono">TestCase</code> base class provided by VIPENTIUM.
+      </p>
+      <p class="mb-4 text-gray-700 text-sm sm:text-base">
+        <strong>Why?</strong> Inheriting from <code class="font-mono">TestCase</code> gives your class built‑in assertion methods and a standardized testing interface.
+      </p>
+      <div class="vipentium-code-block relative my-4">
+        <button class="vipentium-copy-btn" onclick="copyToClipboard(this)">Copy</button>
+        <pre class="text-sm sm:text-base">from vipentium import TestCase
 
 class TestArithmetic(TestCase):
     # This class now has access to VIPENTIUM's assertion methods.
     pass</pre>
-        </div>
       </div>
+    </div>
 
-      <!-- 2.3: Test Method Definition -->
-      <div class="mb-8">
-        <h3 class="text-2xl font-semibold mb-2">Step 2.3: Test Method Definition 📝</h3>
-        <p class="mb-2">
-          <strong>What to Do:</strong> Within your test class, define methods to test specific functionalities. Each method must begin with <code class="font-mono">test_</code> (e.g., <code class="font-mono">test_addition</code>).
-        </p>
-        <p class="mb-2">
-          <strong>Why?</strong> The prefix <code class="font-mono">test_</code> tells VIPENTIUM that the method is a test case to be executed.
-        </p>
-        <div class="vipentium-code-block relative my-4">
-          <button class="vipentium-copy-btn" onclick="copyToClipboard(this)">Copy</button>
-          <pre>class TestArithmetic(TestCase):
+    <!-- 3.3: Test Method Definition -->
+    <div class="mb-8">
+      <h3 class="text-xl sm:text-2xl font-semibold mb-3">Step 3.3: Test Method Definition 📝</h3>
+      <p class="mb-2 text-gray-700 text-sm sm:text-base">
+        <strong>What to Do:</strong> Within your test class, define methods to test specific functionalities. Each method must begin with <code class="font-mono">test_</code> (e.g., <code class="font-mono">test_addition</code>).
+      </p>
+      <p class="mb-4 text-gray-700 text-sm sm:text-base">
+        <strong>Why?</strong> The prefix <code class="font-mono">test_</code> tells VIPENTIUM that the method is a test case to be executed.
+      </p>
+      <div class="vipentium-code-block relative my-4">
+        <button class="vipentium-copy-btn" onclick="copyToClipboard(this)">Copy</button>
+        <pre class="text-sm sm:text-base">class TestArithmetic(TestCase):
     def test_addition(self):
         # Tests a simple addition operation.
         pass</pre>
-        </div>
       </div>
+    </div>
 
-      <!-- 2.4: Assertions -->
-      <div>
-        <h3 class="text-2xl font-semibold mb-2">Step 2.4: Assertions ✅</h3>
-        <p class="mb-2">
-          <strong>What to Do:</strong> Within your test methods, use assertions to compare expected outcomes with actual results. VIPENTIUM provides the <code class="font-mono">assert_equal(a, b)</code> method.
-        </p>
-        <p class="mb-2">
-          <strong>Why?</strong> Assertions ensure that your code behaves as expected and provide consistent error reporting integrated with VIPENTIUM.
-        </p>
-        <div class="vipentium-code-block relative my-4">
-          <button class="vipentium-copy-btn" onclick="copyToClipboard(this)">Copy</button>
-          <pre>class TestArithmetic(TestCase):
+    <!-- 3.4: Assertions -->
+    <div>
+      <h3 class="text-xl sm:text-2xl font-semibold mb-3">Step 3.4: Assertions ✅</h3>
+      <p class="mb-2 text-gray-700 text-sm sm:text-base">
+        <strong>What to Do:</strong> Within your test methods, use assertions to compare expected outcomes with actual results. VIPENTIUM provides the <code class="font-mono">assert_equal(a, b)</code> method.
+      </p>
+      <p class="mb-4 text-gray-700 text-sm sm:text-base">
+        <strong>Why?</strong> Assertions ensure that your code behaves as expected and provide consistent error reporting integrated with VIPENTIUM.
+      </p>
+      <div class="vipentium-code-block relative my-4">
+        <button class="vipentium-copy-btn" onclick="copyToClipboard(this)">Copy</button>
+        <pre class="text-sm sm:text-base">class TestArithmetic(TestCase):
     def test_addition(self):
         self.assert_equal(1 + 1, 2)
 
     def test_division(self):
         # You can also use Python's built‑in assert.
         assert 10 / 2 == 5</pre>
-        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Section 3: Decorators for Enhanced Testing -->
-    <section id="decorators">
-      <h2 class="vipentium-primary-green text-3xl font-bold mb-1">3. Decorators for Enhanced Testing 💎</h2>
+  <!-- Section 4: Decorators for Enhanced Testing -->
+  <section id="decorators">
+    <h2 class="vipentium-primary-green text-2xl sm:text-3xl font-bold mb-4">4. Decorators for Enhanced Testing 💎</h2>
 
-      <!-- 3.1: @parameters -->
-      <div class="mb-8">
-        <h3 class="text-2xl font-semibold mb-2">3.1: <code>@parameters</code> 🎯</h3>
-        <p class="mb-2">
-          <strong>What it Does:</strong> Runs a test method with multiple sets of input values.
-        </p>
-        <p class="mb-2">
-          <strong>Why?</strong> It minimizes code repetition and tests a function under various scenarios.
-        </p>
-        <div class="vipentium-code-block relative my-4">
-          <button class="vipentium-copy-btn" onclick="copyToClipboard(this)">Copy</button>
-          <pre>from vipentium import TestCase, parameters
+    <!-- 4.1: @parameters -->
+    <div class="mb-8">
+      <h3 class="text-xl sm:text-2xl font-semibold mb-3">4.1: <code>@parameters</code> 🎯</h3>
+      <p class="mb-2 text-gray-700 text-sm sm:text-base">
+        <strong>What it Does:</strong> Runs a test method with multiple sets of input values.
+      </p>
+      <p class="mb-4 text-gray-700 text-sm sm:text-base">
+        <strong>Why?</strong> It minimizes code repetition and tests a function under various scenarios.
+      </p>
+      <div class="vipentium-code-block relative my-4">
+        <button class="vipentium-copy-btn" onclick="copyToClipboard(this)">Copy</button>
+        <pre class="text-sm sm:text-base">from vipentium import TestCase, parameters
 
 class TestArithmeticParameterized(TestCase):
     @parameters(
@@ -510,81 +524,81 @@ class TestArithmeticParameterized(TestCase):
     )
     def test_add(self, a, b, expected):
         self.assert_equal(a + b, expected)</pre>
-        </div>
       </div>
+    </div>
 
-      <!-- 3.2: @timeout -->
-      <div class="mb-8">
-        <h3 class="text-2xl font-semibold mb-2">3.2: <code>@timeout</code> ⏰</h3>
-        <p class="mb-2">
-          <strong>What it Does:</strong> Enforces that a test completes within a specified time.
-        </p>
-        <p class="mb-2">
-          <strong>Why?</strong> This helps catch performance issues or infinite loops by failing tests that take too long.
-        </p>
-        <div class="vipentium-code-block relative my-4">
-          <button class="vipentium-copy-btn" onclick="copyToClipboard(this)">Copy</button>
-          <pre>from vipentium import TestCase, timeout
+    <!-- 4.2: @timeout -->
+    <div class="mb-8">
+      <h3 class="text-xl sm:text-2xl font-semibold mb-3">4.2: <code>@timeout</code> ⏰</h3>
+      <p class="mb-2 text-gray-700 text-sm sm:text-base">
+        <strong>What it Does:</strong> Enforces that a test completes within a specified time.
+      </p>
+      <p class="mb-4 text-gray-700 text-sm sm:text-base">
+        <strong>Why?</strong> This helps catch performance issues or infinite loops by failing tests that take too long.
+      </p>
+      <div class="vipentium-code-block relative my-4">
+        <button class="vipentium-copy-btn" onclick="copyToClipboard(this)">Copy</button>
+        <pre class="text-sm sm:text-base">from vipentium import TestCase, timeout
 
 class TestTimeout(TestCase):
     @timeout(2)  # Test must complete within 2 seconds.
     def test_long_running(self):
         self.assert_equal(sum(range(1000000)), 499999500000)</pre>
-        </div>
       </div>
+    </div>
 
-      <!-- 3.3: @retry -->
-      <div class="mb-8">
-        <h3 class="text-2xl font-semibold mb-2">3.3: <code>@retry</code> 🔁</h3>
-        <p class="mb-2">
-          <strong>What it Does:</strong> Automatically retries a test if it fails.
-        </p>
-        <p class="mb-2">
-          <strong>Why?</strong> It is useful for tests with intermittent issues, reducing the chance of false negatives.
-        </p>
-        <div class="vipentium-code-block relative my-4">
-          <button class="vipentium-copy-btn" onclick="copyToClipboard(this)">Copy</button>
-          <pre>from vipentium import TestCase, retry
+    <!-- 4.3: @retry -->
+    <div class="mb-8">
+      <h3 class="text-xl sm:text-2xl font-semibold mb-3">4.3: <code>@retry</code> 🔁</h3>
+      <p class="mb-2 text-gray-700 text-sm sm:text-base">
+        <strong>What it Does:</strong> Automatically retries a test if it fails.
+      </p>
+      <p class="mb-4 text-gray-700 text-sm sm:text-base">
+        <strong>Why?</strong> It is useful for tests with intermittent issues, reducing the chance of false negatives.
+      </p>
+      <div class="vipentium-code-block relative my-4">
+        <button class="vipentium-copy-btn" onclick="copyToClipboard(this)">Copy</button>
+        <pre class="text-sm sm:text-base">from vipentium import TestCase, retry
 
 class TestRetry(TestCase):
     @retry(3)  # Retry up to 3 times if test fails.
     def test_flaky(self):
         self.assert_equal(2 * 2, 4)</pre>
-        </div>
       </div>
+    </div>
 
-      <!-- 3.4: @mark -->
-      <div class="mb-8">
-        <h3 class="text-2xl font-semibold mb-2">3.4: <code>@mark</code> 🏷️</h3>
-        <p class="mb-2">
-          <strong>What it Does:</strong> Tags tests or classes so you can filter and organize them.
-        </p>
-        <p class="mb-2">
-          <strong>Why?</strong> Markers help run specific groups of tests, especially as the test suite grows.
-        </p>
-        <div class="vipentium-code-block relative my-4">
-          <button class="vipentium-copy-btn" onclick="copyToClipboard(this)">Copy</button>
-          <pre>from vipentium import TestCase, mark
+    <!-- 4.4: @mark -->
+    <div class="mb-8">
+      <h3 class="text-xl sm:text-2xl font-semibold mb-3">4.4: <code>@mark</code> 🏷️</h3>
+      <p class="mb-2 text-gray-700 text-sm sm:text-base">
+        <strong>What it Does:</strong> Tags tests or classes so you can filter and organize them.
+      </p>
+      <p class="mb-4 text-gray-700 text-sm sm:text-base">
+        <strong>Why?</strong> Markers help run specific groups of tests, especially as the test suite grows.
+      </p>
+      <div class="vipentium-code-block relative my-4">
+        <button class="vipentium-copy-btn" onclick="copyToClipboard(this)">Copy</button>
+        <pre class="text-sm sm:text-base">from vipentium import TestCase, mark
 
 @mark("basic")
 class TestStringOperations(TestCase):
     def test_concat(self):
         self.assert_equal("hello" + "world", "helloworld")</pre>
-        </div>
       </div>
+    </div>
 
-      <!-- 3.5: @fixture -->
-      <div>
-        <h3 class="text-2xl font-semibold mb-2">3.5: <code>@fixture</code> 🔧</h3>
-        <p class="mb-2">
-          <strong>What it Does:</strong> Defines reusable setup functions (fixtures) for initializing data or environment.
-        </p>
-        <p class="mb-2">
-          <strong>Why?</strong> Fixtures keep your tests DRY by providing consistent states, and they can be reused across tests.
-        </p>
-        <div class="vipentium-code-block relative my-4">
-          <button class="vipentium-copy-btn" onclick="copyToClipboard(this)">Copy</button>
-          <pre>from vipentium import TestCase, fixture
+    <!-- 4.5: @fixture -->
+    <div>
+      <h3 class="text-xl sm:text-2xl font-semibold mb-3">4.5: <code>@fixture</code> 🔧</h3>
+      <p class="mb-2 text-gray-700 text-sm sm:text-base">
+        <strong>What it Does:</strong> Defines reusable setup functions (fixtures) for initializing data or environment.
+      </p>
+      <p class="mb-4 text-gray-700 text-sm sm:text-base">
+        <strong>Why?</strong> Fixtures keep your tests DRY by providing consistent states, and they can be reused across tests.
+      </p>
+      <div class="vipentium-code-block relative my-4">
+        <button class="vipentium-copy-btn" onclick="copyToClipboard(this)">Copy</button>
+        <pre class="text-sm sm:text-base">from vipentium import TestCase, fixture
 
 @fixture(scope="function")
 def simple_list():
@@ -594,66 +608,66 @@ def simple_list():
 class TestList(TestCase):
     def test_list_length(self, simple_list):
         self.assert_equal(len(simple_list), 3)</pre>
-        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Section 4: Running Your Tests -->
-    <section id="running-tests">
-      <h2 class="vipentium-primary-green text-3xl font-bold mb-1">4. Running Your Tests 🏃‍♂️</h2>
-      <p class="mb-1">
-        After writing your tests, run them using VIPENTIUM’s CLI. The tool automatically discovers files starting with <code class="font-mono">test_</code>, injects fixtures, and processes decorators.
-      </p>
-      <p class="mb-2 font-semibold">Recommended Command:</p>
-      <div class="vipentium-code-block relative mb-1">
-        <button class="vipentium-copy-btn" onclick="copyToClipboard(this)">Copy</button>
-        <pre>vipentium-runner test_example.py</pre>
-      </div>
-      <p class="mb-2 font-semibold">Alternative Command:</p>
-      <div class="vipentium-code-block relative mb-1">
-        <button class="vipentium-copy-btn" onclick="copyToClipboard(this)">Copy</button>
-        <pre>python -m vipentium.vipentium_runner test_example.py</pre>
-      </div>
-      <p>
-        The console output will display the status of each test, their execution time, and a final summary.
-      </p>
-    </section>
+  <!-- Section 5: Running Your Tests -->
+  <section id="running-tests">
+    <h2 class="vipentium-primary-green text-2xl sm:text-3xl font-bold mb-4">5. Running Your Tests 🏃‍♂️</h2>
+    <p class="mb-4 text-gray-700 text-sm sm:text-base">
+      After writing your tests, run them using VIPENTIUM’s CLI. The tool automatically discovers files starting with <code class="font-mono">test_</code>, injects fixtures, and processes decorators.
+    </p>
+    <p class="mb-2 font-semibold text-gray-800 text-sm sm:text-base">Recommended Command:</p>
+    <div class="vipentium-code-block relative mb-4">
+      <button class="vipentium-copy-btn" onclick="copyToClipboard(this)">Copy</button>
+      <pre class="text-sm sm:text-base">vipentium-runner test_example.py</pre>
+    </div>
+    <p class="mb-2 font-semibold text-gray-800 text-sm sm:text-base">Alternative Command:</p>
+    <div class="vipentium-code-block relative mb-6">
+      <button class="vipentium-copy-btn" onclick="copyToClipboard(this)">Copy</button>
+      <pre class="text-sm sm:text-base">python -m vipentium.vipentium_runner test_example.py</pre>
+    </div>
+    <p class="text-gray-700 text-sm sm:text-base">
+      The console output will display the status of each test, their execution time, and a final summary.
+    </p>
+  </section>
 
-    <!-- Section 5: Reporting -->
-    <section id="reporting">
-      <h2 class="vipentium-primary-green text-3xl font-bold mb-1">5. Reporting 📊</h2>
-      <p class="mb-1">
-        VIPENTIUM can generate detailed reports for your tests.
-      </p>
-      <p class="mb-2 font-semibold">JSON Reporting:</p>
-      <div class="vipentium-code-block relative mb-1">
-        <button class="vipentium-copy-btn" onclick="copyToClipboard(this)">Copy</button>
-        <pre>vipentium-runner test_example.py --report-json report.json</pre>
-      </div>
-      <p class="mb-2 font-semibold">HTML Reporting:</p>
-      <div class="vipentium-code-block relative mb-1">
-        <button class="vipentium-copy-btn" onclick="copyToClipboard(this)">Copy</button>
-        <pre>vipentium-runner test_example.py --report-html report.html</pre>
-      </div>
-      <p>
-        JSON reports are ideal for CI/CD pipelines; HTML reports are great for sharing with your team.
-      </p>
-    </section>
+  <!-- Section 6: Reporting -->
+  <section id="reporting">
+    <h2 class="vipentium-primary-green text-2xl sm:text-3xl font-bold mb-4">6. Reporting 📊</h2>
+    <p class="mb-4 text-gray-700 text-sm sm:text-base">
+      VIPENTIUM can generate detailed reports for your tests.
+    </p>
+    <p class="mb-2 font-semibold text-gray-800 text-sm sm:text-base">JSON Reporting:</p>
+    <div class="vipentium-code-block relative mb-4">
+      <button class="vipentium-copy-btn" onclick="copyToClipboard(this)">Copy</button>
+      <pre class="text-sm sm:text-base">vipentium-runner test_example.py --report-json report.json</pre>
+    </div>
+    <p class="mb-2 font-semibold text-gray-800 text-sm sm:text-base">HTML Reporting:</p>
+    <div class="vipentium-code-block relative mb-6">
+      <button class="vipentium-copy-btn" onclick="copyToClipboard(this)">Copy</button>
+      <pre class="text-sm sm:text-base">vipentium-runner test_example.py --report-html report.html</pre>
+    </div>
+    <p class="text-gray-700 text-sm sm:text-base">
+      JSON reports are ideal for CI/CD pipelines; HTML reports are great for sharing with your team.
+    </p>
+  </section>
 
-    <!-- Section 6: Extending with Plugins -->
-    <section id="plugins">
-      <h2 class="vipentium-primary-green text-3xl font-bold mb-1">6. Extending with Plugins 🔌</h2>
-      <p class="mb-1">
-        Extend VIPENTIUM by creating plugins to customize test behavior, add logging, send notifications, or integrate with other tools.
-      </p>
-      <ol class="list-decimal ml-6 mb-1">
-        <li><strong>Define a Plugin Class:</strong> Inherit from <code class="font-mono">Plugin</code>.</li>
-        <li><strong>Override Hook Methods:</strong> Customize actions such as before/after tests.</li>
-        <li><strong>Register the Plugin:</strong> Use <code class="font-mono">register_plugin()</code>.</li>
-      </ol>
-      <div class="vipentium-code-block relative my-4">
-        <button class="vipentium-copy-btn" onclick="copyToClipboard(this)">Copy</button>
-        <pre>from vipentium import Plugin, register_plugin
+  <!-- Section 7: Extending with Plugins -->
+  <section id="plugins">
+    <h2 class="vipentium-primary-green text-2xl sm:text-3xl font-bold mb-4">7. Extending with Plugins 🔌</h2>
+    <p class="mb-4 text-gray-700 text-sm sm:text-base">
+      Extend VIPENTIUM by creating plugins to customize test behavior, add logging, send notifications, or integrate with other tools.
+    </p>
+    <ol class="list-decimal ml-6 mb-6 text-gray-700 space-y-2 text-sm sm:text-base">
+      <li><strong>Define a Plugin Class:</strong> Inherit from <code class="font-mono">Plugin</code>.</li>
+      <li><strong>Override Hook Methods:</strong> Customize actions such as before/after tests.</li>
+      <li><strong>Register the Plugin:</strong> Use <code class="font-mono">register_plugin()</code>.</li>
+    </ol>
+    <div class="vipentium-code-block relative my-4">
+      <button class="vipentium-copy-btn" onclick="copyToClipboard(this)">Copy</button>
+      <pre class="text-sm sm:text-base">from vipentium import Plugin, register_plugin
 
 class CustomReportPlugin(Plugin):
     def after_test(self, test_name, test_class, method_name, parameters, success, message, duration):
@@ -667,18 +681,18 @@ def load_my_plugins():
 
 # Load the plugin before running tests.
 load_my_plugins()</pre>
-      </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Section 7: Example Usage -->
-    <section id="example">
-      <h2 class="vipentium-primary-green text-3xl font-bold mb-1">7. Example Usage 💡</h2>
-      <p class="mb-1">
-        The example below demonstrates how to combine fixtures, decorators, and markers into a complete test suite including tests for math functions and list manipulations.
-      </p>
-      <div class="vipentium-code-block relative my-4">
-        <button class="vipentium-copy-btn" onclick="copyToClipboard(this)">Copy</button>
-        <pre>from vipentium import TestCase, parameters, mark, fixture
+  <!-- Section 8: Example Usage -->
+  <section id="example">
+    <h2 class="vipentium-primary-green text-2xl sm:text-3xl font-bold mb-4">8. Example Usage 💡</h2>
+    <p class="mb-4 text-gray-700 text-sm sm:text-base">
+      The example below demonstrates how to combine fixtures, decorators, and markers into a complete test suite including tests for math functions and list manipulations.
+    </p>
+    <div class="vipentium-code-block relative my-4">
+      <button class="vipentium-copy-btn" onclick="copyToClipboard(this)">Copy</button>
+      <pre class="text-sm sm:text-base">from vipentium import TestCase, parameters, mark, fixture
 
 @fixture(scope="function")
 def simple_list():
@@ -731,35 +745,35 @@ class TestListManipulation(TestCase):
     def test_contains(self, simple_list):
         self.assert_equal(2 in simple_list, True)
         self.assert_equal(5 in simple_list, False)</pre>
-      </div>
-      <p>
-        To run these tests, simply execute:
-      </p>
-      <div class="vipentium-code-block relative my-4">
-        <button class="vipentium-copy-btn" onclick="copyToClipboard(this)">Copy</button>
-        <pre>vipentium-runner test_example.py</pre>
-      </div>
-    </section>
+    </div>
+    <p class="mb-2 text-gray-700 text-sm sm:text-base">
+      To run these tests, simply execute:
+    </p>
+    <div class="vipentium-code-block relative my-4">
+      <button class="vipentium-copy-btn" onclick="copyToClipboard(this)">Copy</button>
+      <pre class="text-sm sm:text-base">vipentium-runner test_example.py</pre>
+    </div>
+  </section>
 
-    <!-- Section 8: Conclusion -->
-    <section id="conclusion">
-      <h2 class="vipentium-primary-green text-3xl font-bold mb-1">8. Conclusion 🎉</h2>
-      <p class="mb-1">
-        VIPENTIUM simplifies writing, running, and extending tests. By following these detailed steps, your test files are automatically discovered, structured, and enriched with powerful features—ensuring consistent and maintainable tests.
-      </p>
-      <ul class="list-disc ml-6 mb-1">
-        <li>Test files are named with the <code class="font-mono">test_</code> prefix.</li>
-        <li>Test classes inherit from <code class="font-mono">TestCase</code> for built-in assertions.</li>
-        <li>Test methods start with <code class="font-mono">test_</code> for automatic discovery.</li>
-        <li>Advanced decorators (e.g., <code>@parameters</code>, <code>@timeout</code>, <code>@retry</code>) add flexibility.</li>
-        <li>Fixtures keep tests DRY and consistent.</li>
-        <li>Reporting and plugins integrate tests into your workflow.</li>
-      </ul>
-      <p>
-        You are now ready to build, run, and extend your test suite with VIPENTIUM. Happy testing and happy coding! 🤓👍
-      </p>
-    </section>
-  </main>
+  <!-- Section 9: Conclusion -->
+  <section id="conclusion">
+    <h2 class="vipentium-primary-green text-2xl sm:text-3xl font-bold mb-4">9. Conclusion 🎉</h2>
+    <p class="mb-4 text-gray-700 text-sm sm:text-base">
+      VIPENTIUM simplifies writing, running, and extending tests. By following these detailed steps, your test files are automatically discovered, structured, and enriched with powerful features—ensuring consistent and maintainable tests.
+    </p>
+    <ul class="list-disc ml-6 mb-6 text-gray-700 space-y-2 text-sm sm:text-base">
+      <li>Test files are named with the <code class="font-mono">test_</code> prefix.</li>
+      <li>Test classes inherit from <code class="font-mono">TestCase</code> for built-in assertions.</li>
+      <li>Test methods start with <code class="font-mono">test_</code> for automatic discovery.</li>
+      <li>Advanced decorators (e.g., <code>@parameters</code>, <code>@timeout</code>, <code>@retry</code>) add flexibility.</li>
+      <li>Fixtures keep tests DRY and consistent.</li>
+      <li>Reporting and plugins integrate tests into your workflow.</li>
+    </ul>
+    <p class="text-gray-700 text-sm sm:text-base">
+      You are now ready to build, run, and extend your test suite with VIPENTIUM. Happy testing and happy coding! 🤓👍
+    </p>
+  </section>
+</main>
 
   <!-- Footer (Fixed to Bottom) -->
   <!-- Used the same footer structure and styling as setupguide -->
