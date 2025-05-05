@@ -8,8 +8,8 @@
   <!-- Tailwind CSS CDN -->
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" 
-        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     /* Vipentium Colors & Typography */
@@ -33,7 +33,7 @@
       border-radius: 0.375rem;
       font-family: monospace;
       overflow-x: auto;
-      white-space: pre-wrap;
+      white-space: wrap;
     }
     /* Button Styles */
     .vipentium-btn {
@@ -87,6 +87,70 @@
       background-color: #ddd;
       margin: 0 10px;
     }
+    /* Responsive Text Sizes */
+    .text-base-sm {
+      font-size: 0.875rem; /* text-sm */
+    }
+    .text-base-md {
+      font-size: 1rem; /* text-base */
+    }
+    .text-lg-sm {
+      font-size: 1rem; /* text-base */
+    }
+    .text-lg-md {
+      font-size: 1.125rem; /* text-lg */
+    }
+    .text-xl-sm {
+      font-size: 1.125rem; /* text-lg */
+    }
+    .text-xl-md {
+      font-size: 1.25rem; /* text-xl */
+    }
+    .text-2xl-sm {
+      font-size: 1.25rem; /* text-xl */
+    }
+    .text-2xl-md {
+      font-size: 1.5rem; /* text-2xl */
+    }
+    .text-3xl-sm {
+      font-size: 1.5rem; /* text-2xl */
+    }
+    .text-3xl-md {
+      font-size: 1.875rem; /* text-3xl */
+    }
+
+    @media (min-width: 640px) { /* sm breakpoint */
+      .text-base-sm {
+        font-size: 1rem; /* text-base */
+      }
+      .text-base-md {
+        font-size: 1rem; /* text-base */
+      }
+      .text-lg-sm {
+        font-size: 1.125rem; /* text-lg */
+      }
+      .text-lg-md {
+        font-size: 1.25rem; /* text-xl */
+      }
+      .text-xl-sm {
+        font-size: 1.25rem; /* text-xl */
+      }
+      .text-xl-md {
+        font-size: 1.5rem; /* text-2xl */
+      }
+      .text-2xl-sm {
+        font-size: 1.5rem; /* text-2xl */
+      }
+      .text-2xl-md {
+        font-size: 1.875rem; /* text-3xl */
+      }
+      .text-3xl-sm {
+        font-size: 1.875rem; /* text-3xl */
+      }
+      .text-3xl-md {
+        font-size: 2.25rem; /* text-4xl */
+      }
+    }
   </style>
 </head>
 <body class="vipentium-bg-gray-100 font-sans antialiased flex flex-col min-h-screen">
@@ -98,10 +162,10 @@
         </a>
     <!-- Desktop menu -->
     <div class="hidden md:flex space-x-6 items-center">
-      <a href="https://suresh-pyhobbyist.github.io/vipentium/index.html" class="transition-fast text-gray-700 hover:text-vipentium-secondary-green">Home</a>
-      <a href="https://suresh-pyhobbyist.github.io/vipentium/pages/docs.html" class="transition-fast text-gray-700 hover:text-vipentium-secondary-green">Docs</a>
-      <a href="https://suresh-pyhobbyist.github.io/vipentium/pages/setupguide.html" class="vipentium-nav-link text-gray-700 hover:vipentium-primary-green transition-fast">Setup</a>
-      <a href="https://pypi.org/project/vipentium/" target="_blank" class="vipentium-bg-primary-green hover:vipentium-bg-secondary-green text-white font-semibold py-2 px-4 rounded-full shadow-sm transition-fast">Install via pip</a>
+      <a href="https://suresh-pyhobbyist.github.io/vipentium/index.html" class="transition-fast text-gray-700 hover:text-vipentium-secondary-green text-sm sm:text-base">Home</a>
+      <a href="https://suresh-pyhobbyist.github.io/vipentium/pages/docs.html" class="transition-fast text-gray-700 hover:text-vipentium-secondary-green text-sm sm:text-base">Docs</a>
+      <a href="https://suresh-pyhobbyist.github.io/vipentium/pages/setupguide.html" class="vipentium-nav-link text-gray-700 hover:vipentium-primary-green transition-fast text-sm sm:text-base">Setup</a>
+      <a href="https://pypi.org/project/vipentium/" target="_blank" class="vipentium-bg-primary-green hover:vipentium-bg-secondary-green text-white font-semibold py-2 px-4 rounded-full shadow-sm transition-fast text-sm sm:text-base">Install via pip</a>
     </div>
     <!-- Mobile menu toggle -->
     <div class="md:hidden z-50">
@@ -114,10 +178,10 @@
   </div>
   <!-- Mobile menu -->
   <div id="mobile-menu" class="hidden absolute top-full left-0 w-full z-40 bg-white shadow-md">
-    <a href="https://suresh-pyhobbyist.github.io/vipentium/index.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Home</a>
-    <a href="https://suresh-pyhobbyist.github.io/vipentium/pages/docs.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Docs</a>
-    <a href="https://suresh-pyhobbyist.github.io/vipentium/pages/setupguide.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Setup</a>
-    <a href="https://pypi.org/project/vipentium/" target="_blank" class="vipentium-bg-primary-green hover:vipentium-bg-secondary-green text-white font-semibold py-2 px-4 rounded-full shadow-sm transition-fast block text-center">Install via pip</a>
+    <a href="https://suresh-pyhobbyist.github.io/vipentium/index.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 text-sm sm:text-base">Home</a>
+    <a href="https://suresh-pyhobbyist.github.io/vipentium/pages/docs.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 text-sm sm:text-base">Docs</a>
+    <a href="https://suresh-pyhobbyist.github.io/vipentium/pages/setupguide.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 text-sm sm:text-base">Setup</a>
+    <a href="https://pypi.org/project/vipentium/" target="_blank" class="vipentium-bg-primary-green hover:vipentium-bg-secondary-green text-white font-semibold py-2 px-4 rounded-full shadow-sm transition-fast block text-center text-sm sm:text-base">Install via pip</a>
   </div>
 </nav>
 
@@ -127,35 +191,35 @@
     <div class="vipentium-container mx-auto py-8">
       <!-- Progress Tracker -->
       <div class="flex items-center justify-center mb-4">
-        <div class="vipentium-step-circle" id="circle-0">1</div>
+        <div class="vipentium-step-circle text-sm sm:text-base" id="circle-0">1</div>
         <div class="vipentium-step-line" id="line-0"></div>
-        <div class="vipentium-step-circle" id="circle-1">2</div>
+        <div class="vipentium-step-circle text-sm sm:text-base" id="circle-1">2</div>
         <div class="vipentium-step-line" id="line-1"></div>
-        <div class="vipentium-step-circle" id="circle-2">3</div>
+        <div class="vipentium-step-circle text-sm sm:text-base" id="circle-2">3</div>
         <div class="vipentium-step-line" id="line-2"></div>
-        <div class="vipentium-step-circle" id="circle-3">4</div>
+        <div class="vipentium-step-circle text-sm sm:text-base" id="circle-3">4</div>
       </div>
       <!-- Wizard Content Area -->
-      <div id="wizard" class="bg-white p-8 rounded-lg shadow-lg">
+      <div id="wizard" class="bg-white p-6 sm:p-8 rounded-lg shadow-lg">
         <div id="stepContent">
           <!-- Step 1: Install Vipentium -->
           <div class="wizard-step" id="step-0">
-            <h2 class="vipentium-secondary-green text-2xl font-semibold mb-4">Step 1: Install Vipentium</h2>
-            <p class="mb-4">Open your terminal and run:</p>
+            <h2 class="vipentium-secondary-green text-xl sm:text-2xl font-semibold mb-4">Step 1: Install Vipentium</h2>
+            <p class="mb-4 text-sm sm:text-base">Open your terminal and run:</p>
             <div class="vipentium-code-block mb-4">
-pip install vipentium
+<pre class="text-sm sm:text-base">pip install vipentium</pre>
             </div>
             <div class="flex justify-end">
-              <button class="vipentium-btn vipentium-btn-confirm" onclick="markStepComplete(0)">Mark as Completed</button>
-              <button class="vipentium-btn vipentium-btn-confirm" onclick="nextStep()">Next</button>
+              <button class="vipentium-btn vipentium-btn-confirm text-sm sm:text-base" onclick="markStepComplete(0)">Mark as Completed</button>
+              <button class="vipentium-btn vipentium-btn-confirm text-sm sm:text-base" onclick="nextStep()">Next</button>
             </div>
           </div>
           <!-- Step 2: Write Test Case Example -->
           <div class="wizard-step hidden" id="step-1">
-            <h2 class="vipentium-secondary-green text-2xl font-semibold mb-4">Step 2: Write Test Case</h2>
-            <p class="mb-4">Create a test file (e.g., <code>test_example.py</code>) with the following example:</p>
+            <h2 class="vipentium-secondary-green text-xl sm:text-2xl font-semibold mb-4">Step 2: Write Test Case</h2>
+            <p class="mb-4 text-sm sm:text-base">Create a test file (e.g., <code>test_example.py</code>) with the following example:</p>
             <div class="vipentium-code-block mb-4">
-@mark("math")
+<pre class="text-sm sm:text-base">@mark("math")
 class TestMathFunctions(TestCase):
     @parameters((5, 2, 7), (10, -3, 7), (0, 0, 0))
     def test_add_parameterized(self, a, b, expected):
@@ -165,47 +229,47 @@ class TestMathFunctions(TestCase):
         self.assert_equal(10 / 2, 5)
 
     def test_float_equality(self):
-        self.assert_equal(3.14, 3.14)
+        self.assert_equal(3.14, 3.14)</pre>
             </div>
             <div class="flex justify-between">
-              <button class="vipentium-btn vipentium-btn-confirm" onclick="prevStep()">Previous</button>
+              <button class="vipentium-btn vipentium-btn-confirm text-sm sm:text-base" onclick="prevStep()">Previous</button>
               <div>
-                <button class="vipentium-btn vipentium-btn-confirm mr-2" onclick="markStepComplete(1)">Mark as Completed</button>
-                <button class="vipentium-btn vipentium-btn-confirm" onclick="nextStep()">Next</button>
+                <button class="vipentium-btn vipentium-btn-confirm mr-2 text-sm sm:text-base" onclick="markStepComplete(1)">Mark as Completed</button>
+                <button class="vipentium-btn vipentium-btn-confirm text-sm sm:text-base" onclick="nextStep()">Next</button>
               </div>
             </div>
           </div>
           <!-- Step 3: Run Demo -->
           <div class="wizard-step hidden" id="step-2">
-            <h2 class="vipentium-secondary-green text-2xl font-semibold mb-4">Step 3: Run Demo</h2>
-            <p class="mb-4">Execute your tests with the following command:</p>
+            <h2 class="vipentium-secondary-green text-xl sm:text-2xl font-semibold mb-4">Step 3: Run Demo</h2>
+            <p class="mb-4 text-sm sm:text-base">Execute your tests with the following command:</p>
             <div class="vipentium-code-block mb-4">
-vipentium-runner test_example.py --parallel
+<pre class="text-sm sm:text-base">vipentium-runner test_example.py --parallel</pre>
             </div>
             <div class="flex justify-between">
-              <button class="vipentium-btn vipentium-btn-confirm" onclick="prevStep()">Previous</button>
+              <button class="vipentium-btn vipentium-btn-confirm text-sm sm:text-base" onclick="prevStep()">Previous</button>
               <div>
-                <button class="vipentium-btn vipentium-btn-confirm mr-2" onclick="markStepComplete(2)">Mark as Completed</button>
-                <button class="vipentium-btn vipentium-btn-confirm" onclick="nextStep()">Next</button>
+                <button class="vipentium-btn vipentium-btn-confirm mr-2 text-sm sm:text-base" onclick="markStepComplete(2)">Mark as Completed</button>
+                <button class="vipentium-btn vipentium-btn-confirm text-sm sm:text-base" onclick="nextStep()">Next</button>
               </div>
             </div>
           </div>
           <!-- Step 4: Finish Setup -->
           <div class="wizard-step hidden" id="step-3">
-            <h2 class="vipentium-primary-green text-2xl font-semibold mb-4">Step 4: Finish Setup</h2>
-            <p class="mb-4">Click the button below to complete the setup process.</p>
+            <h2 class="vipentium-primary-green text-xl sm:text-2xl font-semibold mb-4">Step 4: Finish Setup</h2>
+            <p class="mb-4 text-sm sm:text-base">Click the button below to complete the setup process.</p>
             <div class="flex justify-between">
-              <button class="vipentium-btn vipentium-btn-confirm" onclick="prevStep()">Previous</button>
-              <button class="vipentium-btn vipentium-btn-confirm" onclick="finishSetup()">Finish Setup</button>
+              <button class="vipentium-btn vipentium-btn-confirm text-sm sm:text-base" onclick="prevStep()">Previous</button>
+              <button class="vipentium-btn vipentium-btn-confirm text-sm sm:text-base" onclick="finishSetup()">Finish Setup</button>
             </div>
           </div>
         </div>
       </div>
       <!-- Final Message Container -->
-      <div id="finalMessage" class="hidden bg-white p-8 rounded-lg shadow-lg text-center mt-8">
-        <h2 class="vipentium-primary-green text-3xl font-bold mb-4">Setup Complete!</h2>
-        <p class="mb-4">Congratulations! You have successfully set up Vipentium using the example test.</p>
-        <button class="vipentium-btn vipentium-btn-confirm" onclick="location.reload()">Restart Setup</button>
+      <div id="finalMessage" class="hidden bg-white p-6 sm:p-8 rounded-lg shadow-lg text-center mt-8">
+        <h2 class="vipentium-primary-green text-2xl sm:text-3xl font-bold mb-4">Setup Complete!</h2>
+        <p class="mb-4 text-sm sm:text-base">Congratulations! You have successfully set up Vipentium using the example test.</p>
+        <button class="vipentium-btn vipentium-btn-confirm text-sm sm:text-base" onclick="location.reload()">Restart Setup</button>
       </div>
     </div>
   </main>
@@ -221,8 +285,8 @@ vipentium-runner test_example.py --parallel
           </svg>
         </a>
       </div>
-      <p class="text-gray-700 font-medium">
-        &copy; <span id="copyright-year">2025</span> Vipentium - Test with Modernity. All rights reserved.
+      <p class="text-gray-700 font-medium text-xs sm:text-sm">
+        © <span id="copyright-year">2025</span> Vipentium - Test with Modernity. All rights reserved.
       </p>
     </div>
     <script>
@@ -292,7 +356,7 @@ vipentium-runner test_example.py --parallel
     showStep(currentStep);
 
   document.getElementById('copyright-year').textContent = new Date().getFullYear();
-  
+
   document.addEventListener("DOMContentLoaded", () => {
     const btn = document.getElementById("mobile-menu-toggle");
     const menu = document.getElementById("mobile-menu");
@@ -300,6 +364,26 @@ vipentium-runner test_example.py --parallel
       menu.classList.toggle("hidden");
     });
   });
+
+  // Function to copy text to clipboard
+  function copyToClipboard(button) {
+    const codeBlock = button.nextElementSibling; // Get the <pre> element
+    const textToCopy = codeBlock.textContent.trim();
+
+    navigator.clipboard.writeText(textToCopy).then(() => {
+      // Optional: Provide visual feedback to the user
+      button.textContent = 'Copied!';
+      setTimeout(() => {
+        button.textContent = 'Copy';
+      }, 2000); // Reset text after 2 seconds
+    }).catch(err => {
+      console.error('Failed to copy text: ', err);
+      button.textContent = 'Failed!';
+      setTimeout(() => {
+        button.textContent = 'Copy';
+      }, 2000);
+    });
+  }
   </script>
 </body>
 </html>
