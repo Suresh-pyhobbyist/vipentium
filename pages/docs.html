@@ -7,104 +7,111 @@
    <link rel="icon" href="https://raw.githubusercontent.com/Suresh-pyhobbyist/vipentium/f8a137e0de4e89fc4600b08a3d3f6dd51258f06b/vipentium.svg" type="image/svg+xml">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="styles/vipstyle.css">
   <style>
-    /* Custom color classes with vipentium prefix */
-    .vipentium-primary-green { color: #2BC241; }
-    .vipentium-secondary-green { color: #76E322; }
-    .vipentium-bg-primary-green { background-color: #2BC241; }
-    .vipentium-bg-secondary-green { background-color: #76E322; }
-    .vipentium-hover-primary-green:hover { color: #76E322; }
-    .vipentium-hover-bg-primary-green:hover { background-color: #76E322; }
-    
-    /* Code block styling */
-    .vipentium-code-block {
-      background-color: #1e293b; /* slate-800 */
-      color: #f8fafc; /* slate-50 */
-      padding: 1rem;
-      border-radius: 0.375rem;
-      font-family: Menlo, Consolas, "Courier New", monospace;
-      overflow-x: auto;
-      position: relative;
-    }
-    * {
+   /* Custom color classes with vipentium prefix */
+.vipentium-primary-green { color: #2BC241; }
+.vipentium-secondary-green { color: #76E322; }
+.vipentium-bg-primary-green { background-color: #2BC241; }
+.vipentium-bg-secondary-green { background-color: #76E322; }
+.vipentium-hover-primary-green:hover { color: #76E322; }
+.vipentium-hover-bg-primary-green:hover { background-color: #76E322; }
+
+/* Code block styling */
+.vipentium-code-block {
+  background-color: #1e293b; /* slate-800 */
+  color: #f8fafc; /* slate-50 */
+  padding: 1rem;
+  border-radius: 0.375rem;
+  font-family: Menlo, Consolas, "Courier New", monospace;
+  overflow-x: auto;
+  position: relative;
+}
+
+* {
   box-sizing: border-box;
 }
-    .vipentium-copy-btn {
-      position: absolute;
-      top: 0.5rem;
-      right: 0.5rem;
-      background-color: rgba(255,255,255,0.1);
-      color: #f8fafc;
-      padding: 0.25rem 0.5rem;
-      border: none;
-      border-radius: 0.25rem;
-      font-size: 0.75rem;
-      cursor: pointer;
-    }
-    
-    /* Fixed left sidebar */
-    .fixed-sidebar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 100vh;
-      width: 20rem; /* Adjust width as needed (16rem roughly equals 256px) */
-      overflow-y: auto;
-      margin-top: 6rem;
-      padding-left: 2rem;
-    }
-    /* Main content should have a left margin equal to the sidebar's width */
-    .main-content {
-      margin-left: 20rem; /* Same as sidebar width */
-      height: 100vh;
-      padding: 3rem;
-      height: calc(100vh - 6rem); /* Adjust based on the header */
-      overflow-y: auto;
-    }
 
-    /* Ensure a white background on mobile devices (max-width: some breakpoint) */
-@media (max-width: 767px) { /* Adjust 767px as needed for your mobile breakpoint */
-    .py-12, .py-20 {
-      padding-bottom: 7rem !important;
-      padding: 0.7rem;
-    }
-
-    .fixed-sidebar {
-        display: none;
-        top: -24px !important;
-    }
-
-    .footer {
-        padding: 0.5rem !important;
-    }
-    .main-content {
-        margin-left: 0rem !important;
-        padding: 2.6rem !important;
-        padding-bottom: 5rem !important;
-    }
-    .vipentium-bg-white {
-        background-color: white; /* Force white background on mobile */
-    }
-    #codeEditor {
-        margin: rem;
-        padding: 2rem;
-        padding-bottom: 2rem;
-
-    }
-
-    h1{
-      font-size: 1.7rem;
-    }
-
-    h2 {
-      font-size: 1.4rem;
-    }
-
-    .hdr {
-        display: none;
-    }
+.vipentium-copy-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #f8fafc;
+  padding: 0.25rem 0.5rem;
+  border: none;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  cursor: pointer;
 }
+
+/* Fixed left sidebar */
+.fixed-sidebar {
+  position: fixed;
+  top: 6rem; /* Starts below the header */
+  left: 0;
+  height: calc(100vh - 6rem);
+  width: 20rem; /* Adjust as needed */
+  overflow-y: auto;
+  padding-left: 2rem;
+}
+
+/* Main content with left margin matching sidebar width */
+.main-content {
+  margin-left: 20rem; /* Same as sidebar width */
+  padding: 3rem;
+  height: calc(100vh - 6rem);
+  overflow-y: auto;
+}
+
+/* Mobile styles: for screens less than 500px */
+@media (max-width: 500px) {
+  /* Hide the sidebar on mobile devices */
+  .fixed-sidebar {
+    display: none;
+  }
+  
+  /* Adjust main content to take full width */
+  .main-content {
+    margin-left: 0 !important;
+    padding: 2.6rem !important;
+    padding-bottom: 5rem !important;
+    height: auto; /* Allow content to naturally expand */
+  }
+  
+  /* Optional consolidation for specific padded elements */
+  .py-12, .py-20 {
+    padding: 0.7rem !important;
+  }
+  
+  /* Footer and background adjustments */
+  .footer {
+    padding: 0.5rem !important;
+  }
+  
+  .vipentium-bg-white {
+    background-color: #fff; /* Force white background on mobile */
+  }
+  
+  /* #codeEditor styling correction */
+  #codeEditor {
+    margin: 0;
+    padding: 2rem;
+  }
+  
+  /* Responsive typography */
+  h1 {
+    font-size: 1.7rem;
+  }
+  
+  h2 {
+    font-size: 1.4rem;
+  }
+  
+  .hdr {
+    display: none;
+  }
+}
+
   </style>
 </head>
 <body class="bg-gray-50">
