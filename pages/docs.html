@@ -13,161 +13,184 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" /> <!-- Added Font Awesome -->
   <style>
     /* Custom color classes with vipentium prefix */
-    .vipentium-primary-green { color: #2BC241; }
-    .vipentium-secondary-green { color: #76E322; }
-    .vipentium-bg-primary-green { background-color: #2BC241; }
-    .vipentium-bg-secondary-green { background-color: #76E322; }
-    .vipentium-hover-primary-green:hover { color: #76E322; }
-    .vipentium-hover-bg-primary-green:hover { background-color: #76E322; }
-    .vipentium-bg-gray-100 { background-color: #f3f4f6; } /* Added from setupguide */
-    .vipentium-bg-white { background-color: #fff; } /* Added from setupguide */
+.vipentium-primary-green {
+  color: #2BC241;
+}
 
-    /* Code block styling */
-    .vipentium-code-block {
-      background-color: #1e293b; /* slate-800 */
-      color: #f8fafc; /* slate-50 */
-      padding: 2rem;
-      border-radius: 0.375rem;
-      font-family: monospace; /* Using monospace as in setupguide */
-      overflow-x: auto;
-      white-space: wrap; /* Added from setupguide for wrapping */
-      position: relative;
-    }
+.vipentium-secondary-green {
+  color: #76E322;
+}
 
-    * {
-      box-sizing: border-box;
-    }
+.vipentium-bg-primary-green {
+  background-color: #2BC241;
+}
 
-    .vipentium-copy-btn {
-      position: absolute;
-      top: 0.5rem;
-      right: 0.5rem;
-      background-color: rgba(255, 255, 255, 0.1);
-      color: #f8fafc;
-      padding: 0.25rem 0.5rem;
-      border: none;
-      border-radius: 0.25rem;
-      font-size: 0.75rem;
-      cursor: pointer;
-    }
+.vipentium-bg-secondary-green {
+  background-color: #76E322;
+}
 
-    /* Container with Horizontal Padding - Using vipentium-container from setupguide */
-    .vipentium-container {
-      padding-left: 100px;
-      padding-right: 100px;
-    }
-    @media (max-width: 768px) {
-      .vipentium-container {
-        padding-left: 1rem;
-        padding-right: 1rem;
-      }
+.vipentium-hover-primary-green:hover {
+  color: #76E322;
+}
 
-      
-    }
+.vipentium-hover-bg-primary-green:hover {
+  background-color: #76E322;
+}
 
-    /* MOBILE-FIRST STYLES (Default styles for screens less than 768px - typical mobile breakpoint in Tailwind) */
-    /* Hide the sidebar on mobile devices by default */
-    .fixed-sidebar {
-      display: none;
-    }
+.vipentium-bg-gray-100 {
+  background-color: #f3f4f6;
+} /* Added from setupguide */
+.vipentium-bg-white {
+  background-color: #fff;
+} /* Added from setupguide */
 
-    /* Main content occupies full width on mobile */
-    .main-content {
-      margin-left: 0; /* No margin on mobile */
-      padding: 1.5rem; /* Adjusted padding for mobile */
-      height: auto;
-      overflow-y: auto;
-    }
+/* Code block styling */
+.vipentium-code-block {
+  background-color: #1e293b; /* slate-800 */
+  color: #f8fafc; /* slate-50 */
+  padding: 2rem;
+  border-radius: 0.375rem;
+  font-family: monospace; /* Using monospace as in setupguide */
+  overflow-x: auto;
+  white-space: wrap; /* Added from setupguide for wrapping */
+  position: relative;
+}
 
-    /* Additional mobile element adjustments */
-    .py-12,
-    .py-20 {
-      padding: 0.7rem;
-    }
+* {
+  box-sizing: border-box;
+}
 
-    /* TABLET AND DESKTOP STYLES (for screens 768px and wider - using Tailwind's 'md' breakpoint) */
-    @media (min-width: 768px) {
-      /* Show the sidebar on larger screens */
-      .fixed-sidebar {
-        display: block; /* Show sidebar on larger screens */
-        position: fixed;
-        top: 4rem;
-        left: 0;
-        height: calc(100vh - 6rem);
-        width: 20rem;
-        overflow-y: auto;
-        padding-left: 2rem;
-        padding-top: 3rem;
-      }
+.vipentium-copy-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #f8fafc;
+  padding: 0.25rem 0.5rem;
+  border: none;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
 
+/* Container with Horizontal Padding - Using vipentium-container from setupguide */
+.vipentium-container {
+  padding-left: 100px;
+  padding-right: 100px;
+}
 
-      /* Shift main content to accommodate the visible sidebar */
-      .main-content {
-        margin-left: 20rem; /* Same as the sidebar's width */
-        padding: 3rem; /* Original padding for larger screens */
-        height: calc(100vh - 6rem);
-        overflow-y: auto;
-      }
+@media (max-width: 768px) {
+  .vipentium-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
 
-      /* Optional desktop typography adjustments */
-      h1 {
-        font-size: 2rem;
-      }
+/* MOBILE-FIRST STYLES (Default styles for screens less than 768px - typical mobile breakpoint in Tailwind) */
+/* Hide the sidebar on mobile devices by default */
+.fixed-sidebar {
+  display: none;
+}
 
-      h2 {
-        font-size: 1.7rem;
-      }
-    }
+/* Main content occupies full width on mobile */
+.main-content {
+  margin-left: 0; /* No margin on mobile */
+  padding: 1.5rem; /* Adjusted padding for mobile */
+  height: auto;
+  /* REMOVE overflow-y: auto; on mobile */
+}
 
-    /* Footer adjustments to match setupguide */
-    footer {
-       background-color: #f3f4f6; /* vipentium-bg-gray-100 */
-       padding-top: 2rem; /* py-8 */
-       padding-bottom: 2rem; /* py-8 */
-       text-align: center;
-       color: #6b7280; /* text-gray-600 */
-       font-size: 0.875rem; /* text-sm */
-       transition-property: color, background-color, border-color, text-decoration-color, fill, stroke; /* transition-colors */
-       transition-duration: 300ms; /* duration-300 */
-       z-index: 50;
-       position: fixed; /* Fixed position */
-       bottom: 0; /* Align to bottom */
-       left: 0; /* Align to left */
-       width: 100%; /* Full width */
-    }
+/* Additional mobile element adjustments */
+.py-12,
+.py-20 {
+  padding: 0.7rem;
+}
 
-    .footer .container {
-        margin-left: auto;
-        margin-right: auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        row-gap: 0.5rem; /* space-y-2 */
-    }
+/* TABLET AND DESKTOP STYLES (for screens 768px and wider - using Tailwind's 'md' breakpoint) */
+@media (min-width: 768px) {
+  /* Show the sidebar on larger screens */
+  .fixed-sidebar {
+    display: block; /* Show sidebar on larger screens */
+    position: fixed;
+    top: 4rem;
+    left: 0;
+    height: calc(100vh - 6rem);
+    width: 20rem;
+    overflow-y: auto; /* Keep this if you want the sidebar to scroll independently */
+    padding-left: 2rem;
+    padding-top: 3rem;
+  }
 
-     @media (min-width: 640px) { /* sm breakpoint */
-        .footer .container {
-            row-gap: 0.75rem; /* sm:space-y-3 */
-        }
-    }
+  /* Shift main content to accommodate the visible sidebar */
+  .main-content {
+    margin-left: 20rem; /* Same as the sidebar's width */
+    padding: 3rem; /* Original padding for larger screens */
+    /* REMOVE height and overflow-y: auto; from main-content on larger screens */
+    height: auto; /* Allow height to be determined by content */
+    overflow-y: visible; /* Ensure it doesn't create an inner scrollbar */
+  }
 
-    .footer a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        opacity: 1; /* hover:opacity-80 */
-        transition-property: opacity; /* transition-opacity */
-    }
+  /* Optional desktop typography adjustments */
+  h1 {
+    font-size: 2rem;
+  }
 
-     .footer a:hover {
-        opacity: 0.8;
-     }
+  h2 {
+    font-size: 1.7rem;
+  }
+}
 
-     .footer p {
-        color: #4b5563; /* text-gray-700 */
-        font-weight: 500; /* font-medium */
-     }
+/* Footer adjustments to match setupguide */
+footer {
+  background-color: #f3f4f6; /* vipentium-bg-gray-100 */
+  padding-top: 2rem; /* py-8 */
+  padding-bottom: 2rem; /* py-8 */
+  text-align: center;
+  color: #6b7280; /* text-gray-600 */
+  font-size: 0.875rem; /* text-sm */
+  transition-property: color, background-color, border-color, text-decoration-color,
+    fill, stroke; /* transition-colors */
+  transition-duration: 300ms; /* duration-300 */
+  z-index: 50;
+  position: fixed; /* Fixed position */
+  bottom: 0; /* Align to bottom */
+  left: 0; /* Align to left */
+  width: 100%; /* Full width */
+}
+
+.footer .container {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 0.5rem; /* space-y-2 */
+}
+
+@media (min-width: 640px) {
+  /* sm breakpoint */
+  .footer .container {
+    row-gap: 0.75rem;
+  }
+}
+
+.footer a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1; /* hover:opacity-80 */
+  transition-property: opacity; /* transition-opacity */
+}
+
+.footer a:hover {
+  opacity: 0.8;
+}
+
+.footer p {
+  color: #4b5563; /* text-gray-700 */
+  font-weight: 500; /* font-medium */
+}
 
   </style>
 </head>
@@ -761,50 +784,65 @@ class TestListManipulation(TestCase):
 
 
   <!-- JavaScript for interactive features (copy buttons and smooth scrolling) -->
-  <script>
-    document.getElementById('copyright-year').textContent = new Date().getFullYear();
 
-    document.addEventListener("DOMContentLoaded", () => {
-      const btn = document.getElementById("mobile-menu-toggle");
-      const menu = document.getElementById("mobile-menu");
-      btn.addEventListener("click", () => {
-        menu.classList.toggle("hidden");
+    <!-- JavaScript for interactive features (copy buttons and smooth scrolling) -->
+    <script>
+      document.getElementById('copyright-year').textContent = new Date().getFullYear();
+  
+      document.addEventListener("DOMContentLoaded", () => {
+        const btn = document.getElementById("mobile-menu-toggle");
+        const menu = document.getElementById("mobile-menu");
+        btn.addEventListener("click", () => {
+          menu.classList.toggle("hidden");
+        });
       });
-    });
-
-    // Function to copy code to clipboard.
-    function copyToClipboard(button) {
-      const codeBlock = button.nextElementSibling;
-      const text = codeBlock.innerText;
-
-      navigator.clipboard.writeText(text)
-        .then(() => {
-          button.innerText = "Copied!";
-          setTimeout(() => { button.innerText = "Copy"; }, 1500);
-        })
-        .catch(err => console.error("Error copying text: ", err));
-    }
-
-    // Smooth-scroll for sidebar navigation.
-    document.querySelectorAll('aside nav a').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          // Calculate offset to account for fixed header and footer
-          const headerHeight = document.querySelector('nav').offsetHeight;
-          const footerHeight = document.querySelector('footer').offsetHeight;
-          const targetPosition = target.getBoundingClientRect().top + window.scrollY;
-          const offsetPosition = targetPosition - headerHeight - 20; // Add a little extra space
-
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: "smooth"
-          });
-        }
+  
+      // Function to copy code to clipboard.
+      function copyToClipboard(button) {
+        const codeBlock = button.nextElementSibling;
+        const text = codeBlock.innerText;
+  
+        navigator.clipboard.writeText(text)
+          .then(() => {
+            button.innerText = "Copied!";
+            setTimeout(() => { button.innerText = "Copy"; }, 1500);
+          })
+          .catch(err => console.error("Error copying text: ", err));
+      }
+  
+      // Smooth-scroll for sidebar navigation.
+      document.querySelectorAll('aside nav a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          // Prevent the browser's default jump-to-anchor behavior
+          e.preventDefault();
+  
+          const targetId = this.getAttribute('href');
+          const targetElement = document.querySelector(targetId);
+  
+          if (targetElement) {
+            const header = document.querySelector('nav'); // Get the fixed header
+            const headerHeight = header ? header.offsetHeight : 0; // Get header height, default to 0 if not found
+  
+            // Calculate the position to scroll to, accounting for the header height
+            const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+            const offsetPosition = targetPosition - headerHeight; // Subtract header height
+  
+            // Add a small buffer for better visual alignment
+            const buffer = 20;
+            const finalScrollPosition = offsetPosition - buffer;
+  
+            window.scrollTo({
+              top: finalScrollPosition,
+              behavior: "smooth"
+            });
+  
+            // Update the URL hash without triggering another scroll
+            // This is important for browser history and direct linking
+            history.pushState(null, null, targetId);
+          }
+        });
       });
-    });
-  </script>
+    </script>
 
 
 </body>
