@@ -210,7 +210,6 @@
 <pre class="text-sm sm:text-base">pip install vipentium</pre>
             </div>
             <div class="flex justify-end">
-              <button class="vipentium-btn vipentium-btn-confirm text-sm sm:text-base" onclick="markStepComplete(0)">Mark as Completed</button>
               <button class="vipentium-btn vipentium-btn-confirm text-sm sm:text-base" onclick="nextStep()">Next</button>
             </div>
           </div>
@@ -233,10 +232,7 @@ class TestMathFunctions(TestCase):
             </div>
             <div class="flex justify-between">
               <button class="vipentium-btn vipentium-btn-confirm text-sm sm:text-base" onclick="prevStep()">Previous</button>
-              <div>
-                <button class="vipentium-btn vipentium-btn-confirm mr-2 text-sm sm:text-base" onclick="markStepComplete(1)">Mark as Completed</button>
-                <button class="vipentium-btn vipentium-btn-confirm text-sm sm:text-base" onclick="nextStep()">Next</button>
-              </div>
+              <button class="vipentium-btn vipentium-btn-confirm text-sm sm:text-base" onclick="nextStep()">Next</button>
             </div>
           </div>
           <!-- Step 3: Run Demo -->
@@ -248,10 +244,7 @@ class TestMathFunctions(TestCase):
             </div>
             <div class="flex justify-between">
               <button class="vipentium-btn vipentium-btn-confirm text-sm sm:text-base" onclick="prevStep()">Previous</button>
-              <div>
-                <button class="vipentium-btn vipentium-btn-confirm mr-2 text-sm sm:text-base" onclick="markStepComplete(2)">Mark as Completed</button>
-                <button class="vipentium-btn vipentium-btn-confirm text-sm sm:text-base" onclick="nextStep()">Next</button>
-              </div>
+              <button class="vipentium-btn vipentium-btn-confirm text-sm sm:text-base" onclick="nextStep()">Next</button>
             </div>
           </div>
           <!-- Step 4: Finish Setup -->
@@ -320,11 +313,6 @@ class TestMathFunctions(TestCase):
           line.style.backgroundColor = (i < currentStep) ? '#2BC241' : '#ddd';
         }
       }
-    }
-
-    function markStepComplete(stepIndex) {
-      const circle = document.getElementById('circle-' + stepIndex);
-      circle.classList.add('completed');
     }
 
     function nextStep() {
