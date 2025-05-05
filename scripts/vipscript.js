@@ -89,3 +89,41 @@ navigator.clipboard.writeText(textToCopy)
   alert('Failed to copy text to clipboard. Please try again.');
 });
 }
+
+const terminalOutput = document.getElementById("vipentium-terminal-output");
+    const commands = [
+        "> Running vipentium-runner...",
+        "> Discovering test files...",
+        "> Executing test cases...",
+        "✅ TestBasicOperations.test_addition (0.00s)",
+        "✅ TestBasicOperations.test_list_length (0.00s)",
+        "✅ TestBasicOperations.test_string_concat (0.00s)",
+        "✅ TestMathFunctions.test_division (0.00s)",
+        "❌ TestMathFunctions.test_complex_addition (0.00s) - TypeError: Missing argument",
+        "🌟 Test Summary 🌟 | Total: 5 | Passed: 4 | Failed: 1 | Duration: 0.05s",
+        "> Clearing test logs...",
+        "> Restarting tests..."
+    ];
+
+    function typeCommands() {
+        terminalOutput.innerHTML = ""; // Clears previous output before rewriting
+        let index = 0;
+
+        function writeLine() {
+            if (index < commands.length) {
+                const line = document.createElement("div");
+                line.className = "vipentium-output-line truncate"; // Ensure no overflow
+                line.innerHTML = commands[index];
+                terminalOutput.appendChild(line);
+                index++;
+                setTimeout(writeLine, 1000);
+            } else {
+                setTimeout(typeCommands, 2000); // Restart test cycle after a brief pause
+            }
+        }
+
+        writeLine();
+    }
+
+    typeCommands(); // Start animation loop
+
