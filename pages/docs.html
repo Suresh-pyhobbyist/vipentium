@@ -668,28 +668,28 @@ class TestList(TestCase):
     <div class="vipentium-code-block relative my-4">
       <button class="vipentium-copy-btn" onclick="copyToClipboard(this)">Copy</button>
       <pre class="text-sm sm:text-base">
-      class CustomLoggerPlugin(Plugin):
-          """
-          A custom plugin that logs messages at various stages of the test execution.
-          It implements the following methods:
-            - on_start_suite: Called when the test suite starts.
-            - before_test: Called right before each test is executed.
-            - after_test: Called after a test completes.
-            - on_end_suite: Called when the test suite completes.
-          """
-          def on_start_suite(self):
-              print("CUSTOM PLUGIN: Starting test suite!")
-      
-          def before_test(self, test_name, test_class, method, params):
-              print(f"CUSTOM PLUGIN: About to run test: {test_name}")
-      
-          def after_test(self, test_name, test_class, method, params, success, message, duration):
-              status = "PASS" if success else "FAIL"
-              print(f"CUSTOM PLUGIN: Finished test: {test_name} - {status} in {duration:.2f} seconds")
-      
-          def on_end_suite(self, summary):
-              print("CUSTOM PLUGIN: Test suite finished.")
-              print("CUSTOM PLUGIN: Summary:", summary)
+class CustomLoggerPlugin(Plugin):
+    """
+    A custom plugin that logs messages at various stages of the test execution.
+    It implements the following methods:
+      - on_start_suite: Called when the test suite starts.
+      - before_test: Called right before each test is executed.
+      - after_test: Called after a test completes.
+      - on_end_suite: Called when the test suite completes.
+    """
+    def on_start_suite(self):
+        print("CUSTOM PLUGIN: Starting test suite!")
+
+    def before_test(self, test_name, test_class, method, params):
+        print(f"CUSTOM PLUGIN: About to run test: {test_name}")
+
+    def after_test(self, test_name, test_class, method, params, success, message, duration):
+        status = "PASS" if success else "FAIL"
+        print(f"CUSTOM PLUGIN: Finished test: {test_name} - {status} in {duration:.2f} seconds")
+
+    def on_end_suite(self, summary):
+        print("CUSTOM PLUGIN: Test suite finished.")
+        print("CUSTOM PLUGIN: Summary:", summary)
 
 # Load the plugin before running tests.
 register_plugin(CustomLoggerPlugin())</pre>
