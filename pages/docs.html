@@ -691,61 +691,164 @@ load_my_plugins()</pre>
       The example below demonstrates how to combine fixtures, decorators, and markers into a complete test suite including tests for math functions and list manipulations.
     </p>
     <div class="vipentium-code-block relative my-4">
-      <button class="vipentium-copy-btn" onclick="copyToClipboard(this)">Copy</button>
-      <pre class="text-sm sm:text-base">from vipentium import TestCase, parameters, mark, fixture
+  <button class="vipentium-copy-btn" onclick="copyToClipboard(this)">Copy</button>
+  <pre class="text-sm sm:text-base">
+#!/usr/bin/env python3
+from vipentium import TestCase, Plugin, parameters, mark, fixture, timeout, retry, register_plugin
+import time
+
+
+
+# ------------------------------------------------------------------------------
+# Custom Plugin Definition
+# ------------------------------------------------------------------------------
+
+class CustomLoggerPlugin(Plugin):
+    Plugin =[]
+    """
+    A custom plugin that logs messages at various stages of the test execution.
+    It implements the following methods:
+      - on_start_suite: Called when the test suite starts.
+      - before_test: Called right before each test is executed.
+      - after_test: Called after a test completes.
+      - on_end_suite: Called when the test suite completes.
+    """
+    def on_start_suite(self):
+        print("CUSTOM PLUGIN: Starting test suite!")
+
+    def before_test(self, test_name, test_class, method, params):
+        print(f"CUSTOM PLUGIN: About to run test: {test_name}")
+
+    def after_test(self, test_name, test_class, method, params, success, message, duration):
+        status = "PASS" if success else "FAIL"
+        print(f"CUSTOM PLUGIN: Finished test: {test_name} - {status} in {duration:.2f} seconds")
+
+    def on_end_suite(self, summary):
+        print("CUSTOM PLUGIN: Test suite finished.")
+        print("CUSTOM PLUGIN: Summary:", summary)
+
+
+register_plugin(CustomLoggerPlugin())
+
+# ------------------------------------------------------------------------------
+# Fixtures
+# ------------------------------------------------------------------------------
 
 @fixture(scope="function")
 def simple_list():
-    """A simple mutable list for testing list operations."""
+    """
+    Function-scoped fixture that returns a simple mutable list.
+    Each test that requires this fixture gets its own fresh copy.
+    """
     return [1, 2, 3]
 
 @fixture(scope="session")
 def shared_resource():
-    """A resource shared for the test session."""
+    """
+    Session-scoped fixture that returns a shared resource.
+    This fixture is set up only once per entire test session.
+    """
     print("\nSetting up shared resource...")
     return {"message": "Hello from shared resource"}
 
-@mark("basic")
+# ------------------------------------------------------------------------------
+# Test Classes and Test Cases
+# ------------------------------------------------------------------------------
+
 class TestBasicOperations(TestCase):
+    """Tests for basic operations; each test is marked individually with 'basic'."""
+    
+    @mark("basic")
     def test_addition(self):
         self.assert_equal(2 + 2, 4)
 
+    @mark("basic")
     def test_string_concat(self):
         self.assert_equal("hello" + "world", "helloworld")
 
+    @mark("basic")
     def test_list_length(self, simple_list):
         self.assert_equal(len(simple_list), 3)
 
+    @mark("basic")
     def test_shared_message(self, shared_resource):
         self.assert_equal(shared_resource["message"], "Hello from shared resource")
 
-@mark("math")
 class TestMathFunctions(TestCase):
+    """Tests for math functions; each test is marked individually with 'math'."""
+    
     @parameters((5, 2, 7), (10, -3, 7), (0, 0, 0))
+    @mark("math")
     def test_add_parameterized(self, a, b, expected):
         self.assert_equal(a + b, expected)
 
+    @mark("math")
     def test_division(self):
         self.assert_equal(10 / 2, 5)
 
+    @mark("math")
     def test_float_equality(self):
         self.assert_equal(3.14, 3.14)
 
-@mark("list_operations")
 class TestListManipulation(TestCase):
+    """Tests for list manipulation; each test is marked individually with 'list_operations'."""
+    
+    @mark("list_operations")
     def test_append(self, simple_list):
         simple_list.append(4)
         self.assert_equal(simple_list, [1, 2, 3, 4])
 
+    @mark("list_operations")
     def test_pop(self, simple_list):
         popped_item = simple_list.pop()
         self.assert_equal(popped_item, 3)
         self.assert_equal(simple_list, [1, 2])
 
+    @mark("list_operations")
     def test_contains(self, simple_list):
         self.assert_equal(2 in simple_list, True)
-        self.assert_equal(5 in simple_list, False)</pre>
-    </div>
+        self.assert_equal(5 in simple_list, False)
+
+class TestTimeoutExample(TestCase):
+    """
+    Test demonstrating the timeout feature.
+    This test is individually marked with 'advanced' and 'timeout',
+    and it intentionally exceeds the allowed duration.
+    """
+    @mark("advanced")
+    @mark("timeout")
+    @timeout(1)  # The test must complete in 1 second.
+    def test_sleep_timeout(self):
+        time.sleep(2)
+        self.assert_equal(True, True)
+
+class TestRetryMechanism(TestCase):
+    """
+    Test demonstrating the retry mechanism.
+    It is marked individually with 'retry' and designed to pass after a retry.
+    """
+    retry_counter = 0
+
+    @mark("retry")
+    @retry(2)    # Retry up to 2 times upon failure.
+    @timeout(2)  # The test must complete within 2 seconds overall.
+    def test_retry_example(self):
+        TestRetryMechanism.retry_counter += 1
+        if TestRetryMechanism.retry_counter < 2:
+            self.assert_equal(1, 2, "Intentional failure to trigger retry")
+        else:
+            self.assert_equal(1, 1)
+
+# ------------------------------------------------------------------------------
+# Test Runner Entry Point
+# ------------------------------------------------------------------------------
+
+if __name__ == "__main__":
+    import sys
+    from vipentium.starter.startz import *
+    sys.exit(0)
+  </pre>
+</div>
     <p class="mb-2 text-gray-700 text-sm sm:text-base">
       To run these tests, simply execute:
     </p>
