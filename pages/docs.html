@@ -667,20 +667,32 @@ class TestList(TestCase):
     </ol>
     <div class="vipentium-code-block relative my-4">
       <button class="vipentium-copy-btn" onclick="copyToClipboard(this)">Copy</button>
-      <pre class="text-sm sm:text-base">from vipentium import Plugin, register_plugin
-
-class CustomReportPlugin(Plugin):
-    def after_test(self, test_name, test_class, method_name, parameters, success, message, duration):
-        if success:
-            print(f"[CUSTOM REPORT] Test '{test_name}' passed in {duration:.2f}s")
-        else:
-            print(f"[CUSTOM REPORT] Test '{test_name}' failed: {message}")
-
-def load_my_plugins():
-    register_plugin(CustomReportPlugin())
+      <pre class="text-sm sm:text-base">
+      class CustomLoggerPlugin(Plugin):
+          """
+          A custom plugin that logs messages at various stages of the test execution.
+          It implements the following methods:
+            - on_start_suite: Called when the test suite starts.
+            - before_test: Called right before each test is executed.
+            - after_test: Called after a test completes.
+            - on_end_suite: Called when the test suite completes.
+          """
+          def on_start_suite(self):
+              print("CUSTOM PLUGIN: Starting test suite!")
+      
+          def before_test(self, test_name, test_class, method, params):
+              print(f"CUSTOM PLUGIN: About to run test: {test_name}")
+      
+          def after_test(self, test_name, test_class, method, params, success, message, duration):
+              status = "PASS" if success else "FAIL"
+              print(f"CUSTOM PLUGIN: Finished test: {test_name} - {status} in {duration:.2f} seconds")
+      
+          def on_end_suite(self, summary):
+              print("CUSTOM PLUGIN: Test suite finished.")
+              print("CUSTOM PLUGIN: Summary:", summary)
 
 # Load the plugin before running tests.
-load_my_plugins()</pre>
+register_plugin(CustomLoggerPlugin())</pre>
     </div>
   </section>
 
@@ -693,18 +705,14 @@ load_my_plugins()</pre>
     <div class="vipentium-code-block relative my-4">
   <button class="vipentium-copy-btn" onclick="copyToClipboard(this)">Copy</button>
   <pre class="text-sm sm:text-base">
-#!/usr/bin/env python3
 from vipentium import TestCase, Plugin, parameters, mark, fixture, timeout, retry, register_plugin
 import time
-
-
 
 # ------------------------------------------------------------------------------
 # Custom Plugin Definition
 # ------------------------------------------------------------------------------
 
 class CustomLoggerPlugin(Plugin):
-    Plugin =[]
     """
     A custom plugin that logs messages at various stages of the test execution.
     It implements the following methods:
