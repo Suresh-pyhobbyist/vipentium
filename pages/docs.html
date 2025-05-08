@@ -363,6 +363,23 @@ vipentium-runner tests/ --verbose
       </div>
     </div>
 
+    <div class="mb-8">
+  <h2 class="text-xl sm:text-2xl font-semibold vipentium-primary-green mb-3">
+    📣 --trello
+  </h2>
+  <p class="mb-4 text-gray-700 text-sm sm:text-base">
+    The <code>--trello</code> option automatically transforms test failures into detailed Trello cards.
+    When a test fails, error messages and tracebacks are sent directly to your configured Trello board—making it easy to track and resolve issues in real time. 🚀
+  </p>
+  <div class="vipentium-code-block relative mb-4">
+    <button class="vipentium-copy-btn" onclick="copyToClipboard(this)">Copy</button>
+    <pre class="text-sm sm:text-base">
+vipentium-runner tests/ --trello
+    </pre>
+  </div>
+</div>
+
+
     <!-- --report-json option -->
     <div class="mb-8">
       <h2 class="text-xl sm:text-2xl font-semibold vipentium-primary-green mb-3">
