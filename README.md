@@ -8,6 +8,11 @@ vipentium is a robust and user-friendly Python testing framework engineered to s
 [![Code Style](https://img.shields.io/badge/Code%20Style-PEP8-brightgreen.svg)](https://www.python.org/dev/peps/pep-0008/)
 
 
+### Note
+```
+Please always check the documentation on the website for the latest updates
+```
+
 ## ✨ Key Features
 
 * **🔍 Auto Test Discovery:** Automatically identifies test files (prefixed with `test_`), modules, and directories within a specified path, simplifying test organization and execution.
@@ -38,6 +43,7 @@ pip install vipentium
 | Recommended    | `vipentium-runner <test_path> [options]`            | `vipentium-runner test_example.py --parallel` |
 | Alternative    | `python -m vipentium.vipentium_runner <test_path> [options]` | `python -m vipentium.vipentium_runner test_example.py --parallel` |
 
+
 ### Example:
 - **Recommended:** `vipentium-runner test_example.py --parallel`  
 - **Alternative:** `python -m vipentium.vipentium_runner test_example.py --parallel`
@@ -55,6 +61,87 @@ Replace `<test_path>` with the path to the directory, file, or module containing
 | `--report-json <filename>` | Generate a test report in JSON format and save it to the specified filename.                       |
 | `--report-html <filename>` | Generate a test report in HTML format and save it to the specified filename.                       |
 | `--mark <marker>` | Only run tests that are decorated with the specified marker. This option can be used multiple times.      |
+| `--trello` | Enables Trello integration. When used, vipentium converts test failures into Trello cards with all relevant details. |
+
+
+## Trello Integration Credentials Setup 🔐
+
+Enhance your Vipentium testing workflow by enabling Trello integration! With this feature, every test failure is automatically logged as a Trello card—making it easier than ever to track and resolve issues.
+
+
+### 1. Create a `.env` File 📄
+
+In the root directory of your project, create a file named:
+```
+.env
+```
+
+### 2. Add Your Trello Credentials 🛡️
+
+Open the `.env` file and add the following lines (replace the placeholders with your actual credentials):
+
+```env
+TRELLO_KEY=your_trello_api_key_here
+TRELLO_TOKEN=your_trello_api_token_here
+TRELLO_LIST_ID=your_trello_list_id_here
+```
+
+- **TRELLO_KEY:** Your unique Trello API key.
+- **TRELLO_TOKEN:** Your Trello API token.
+- **TRELLO_LIST_ID:** The ID of the Trello list where new cards will be created for test failures.
+
+---
+
+### 3. Secure Your Credentials 🔒
+
+To protect your sensitive information, add the `.env` file to your `.gitignore`:
+
+```gitignore
+.env
+```
+
+---
+
+### 4. Setting Up Environment Variables in PowerShell 🚀
+
+If you run your tests using PowerShell, manually set the Trello environment variables by following these steps:
+
+1. **Open PowerShell:** Launch PowerShell via the Start Menu or your preferred method.
+
+2. **Set the Environment Variables:** Run the following commands (replacing the placeholders with your actual credentials):
+
+   ```powershell
+   $env:TRELLO_KEY = "your_trello_api_key_here"
+   $env:TRELLO_TOKEN = "your_trello_api_token_here"
+   $env:TRELLO_LIST_ID = "your_trello_list_id_here"
+   ```
+
+3. **Verify the Variables (Optional):** Check that they’re set correctly by running:
+
+   ```powershell
+   echo $env:TRELLO_KEY
+   echo $env:TRELLO_TOKEN
+   echo $env:TRELLO_LIST_ID
+   ```
+
+---
+
+### 5. Usage ⚙️
+
+With your credentials configured, Vipentium will automatically load these environment variables. Use the `--trello` option to enable Trello integration when running your tests:
+
+```bash
+vipentium-runner <test_path> --trello
+```
+
+Replace `<test_path>` with the path to your test files, directory, or module.
+
+---
+
+You're all set! Enjoy seamless test tracking and issue resolution with Trello integration. 🚀
+```
+---
+
 
 ## 🧪 Writing Test Cases
 
