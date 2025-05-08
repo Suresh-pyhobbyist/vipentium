@@ -1,15 +1,15 @@
 from vipentium.starter.startz import *
 from vipentium.testcases.coreex import *
-import datetime
+from datetime import datetime
 # --------------------------------------------------------------
 # Advanced Reporting: JSON and HTML reports
 # --------------------------------------------------------------
 def generate_json_report(report_file, suite_summary, results):
     # Metadata: capture when the report was generated and some environment details
     metadata = {
-        "generated_at": datetime.datetime.utcnow().isoformat() + "Z",
+        "generated_at": datetime.utcnow().isoformat() + "Z",
         "framework": "vipentium",
-        "framework_version": "1.0.2",  # Update as needed
+        "framework_version": "1.0.4",  # Update as needed
         "python_version": sys.version.split()[0],
         "os": os.name
     }
