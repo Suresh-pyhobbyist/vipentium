@@ -96,17 +96,17 @@
     padding-right: 1rem; /* Default small padding */
 }
 
-@media (min-width: 640px) { /* sm */
-    .container-proper {
-        padding-left: 2rem;
-        padding-right: 2rem;
-    }
-}
-
 @media (min-width: 1280px) { /* xl */
     .container-proper {
         padding-left: 4rem;
         padding-right: 4rem;
+    }
+}
+
+@media (min-width: 640px) { /* sm */
+    .container-proper {
+        padding-left: 2rem;
+        padding-right: 2rem;
     }
 }
 
