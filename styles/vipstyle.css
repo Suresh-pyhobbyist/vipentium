@@ -73,6 +73,11 @@
       padding: 0.7rem;
     }
 
+     .py-40 {
+      padding-top: 5rem !important;
+      padding-bottom: 5rem !important;
+   }
+
     .vipentium-bg-white {
         background-color: white; /* Force white background on mobile */
     }
@@ -101,11 +106,6 @@
         padding-left: 2rem;
         padding-right: 2rem;
     }
-
-     .py-40 {
-      padding-top: 5rem !important;
-      padding-bottom: 5rem !important;
-   }
 }
 
 @media (min-width: 1280px) { /* xl */
