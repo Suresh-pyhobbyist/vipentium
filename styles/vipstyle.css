@@ -73,11 +73,6 @@
       padding: 0.7rem;
     }
 
-     .py-40 {
-      padding-top: 5rem !important;
-      padding-bottom: 5rem !important;
-   }
-
     .vipentium-bg-white {
         background-color: white; /* Force white background on mobile */
     }
@@ -113,6 +108,13 @@
         padding-left: 4rem;
         padding-right: 4rem;
     }
+}
+
+@media (max-width: 500px) {
+   .py-40 {
+      padding-top: 5rem !important;
+      padding-bottom: 5rem !important;
+   }
 }
 
 @media (min-width: 1920px) { /* Custom larger breakpoint */
