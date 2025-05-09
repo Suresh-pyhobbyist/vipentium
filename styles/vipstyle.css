@@ -1,271 +1,292 @@
-/* ======================================================================
-   CUSTOM COLOR & UTILITY CLASSES
-   ====================================================================== */
+/* Custom styles to enforce the color scheme */
 .vipentium-primary-green {
-  color: #2BC241;
+	color: #2BC241;
 }
+
 .vipentium-secondary-green {
-  color: #76E322;
+	color: #76E322;
 }
 
 .vipentium-bg-primary-green {
-  background-color: #2BC241;
+	background-color: #2BC241;
 }
+
 .vipentium-bg-secondary-green {
-  background-color: #76E322;
+	background-color: #76E322;
 }
 
 .vipentium-border-primary-green {
-  border-color: #2BC241;
+	border-color: #2BC241;
 }
 
 .vipentium-hover-primary-green:hover {
-  color: #76E322;
+	color: #76E322;
 }
+
 .vipentium-hover-bg-primary-green:hover {
-  background-color: #76E322;
+	background-color: #76E322;
 }
 
-/* ======================================================================
-   CODE BLOCK STYLES
-   ====================================================================== */
 .vipentium-code-block {
-  background-color: #1e293b; /* Tailwind's slate-800, a dark gray */
-  color: #f8fafc; /* Tailwind's slate-50, a very light gray */
-  padding: 1rem;
-  border-radius: 0.375rem; /* Tailwind's rounded-md */
-  font-family: monospace;
-  overflow-x: auto;
+	background-color: #1e293b;
+	/* Tailwind's slate-800, a dark gray */
+	color: #f8fafc;
+	/* Tailwind's slate-50, a very light gray */
+	padding: 1rem;
+	border-radius: 0.375rem;
+	/* Tailwind's rounded-md */
+	font-family: monospace;
+	overflow-x: auto;
 }
 
-/* ======================================================================
-   FEATURE ICON STYLES
-   ====================================================================== */
 .vipentium-feature-icon {
-  width: 60px;
-  height: 60px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 0.5rem;
-  font-size: 1.5rem;
-  color: white;
+	width: 60px;
+	height: 60px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 0.5rem;
+	font-size: 1.5rem;
+	color: white;
 }
-.vipentium-feature-icon.discovery,
-.vipentium-feature-icon.async,
-.vipentium-feature-icon.retry,
-.vipentium-feature-icon.plugins,
-.vipentium-feature-icon.markers,
-.vipentium-feature-icon.reporting {
-  background-color: #2BC241;
+
+.vipentium-feature-icon.discovery {
+	background-color: #2BC241;
 }
-.vipentium-feature-icon.parameterized,
-.vipentium-feature-icon.timeout,
-.vipentium-feature-icon.parallel,
-.vipentium-feature-icon.fixtures,
+
+.vipentium-feature-icon.parameterized {
+	background-color: #76E322;
+}
+
+.vipentium-feature-icon.async {
+	background-color: #2BC241;
+}
+
+.vipentium-feature-icon.timeout {
+	background-color: #76E322;
+}
+
+.vipentium-feature-icon.retry {
+	background-color: #2BC241;
+}
+
+.vipentium-feature-icon.parallel {
+	background-color: #76E322;
+}
+
+.vipentium-feature-icon.plugins {
+	background-color: #2BC241;
+}
+
+.vipentium-feature-icon.fixtures {
+	background-color: #76E322;
+}
+
+.vipentium-feature-icon.markers {
+	background-color: #2BC241;
+}
+
 .vipentium-feature-icon.verbose {
-  background-color: #76E322;
+	background-color: #76E322;
 }
 
-/* ======================================================================
-   NAVIGATION LINK STYLES
-   ====================================================================== */
+.vipentium-feature-icon.reporting {
+	background-color: #2BC241;
+}
+
 .vipentium-nav-link.active {
-  border-bottom: 2px solid #2BC241;
+	border-bottom: 2px solid #2BC241;
 }
 
-/* ======================================================================
-   BACKGROUND COLOR UTILITY
-   ====================================================================== */
+/* .hidden { display: none !important; } */
+/* Default background for larger screens (white) */
 .vipentium-bg-white {
-  background-color: white;
+	background-color: white;
 }
 
-/* ======================================================================
-   RESPONSIVE ADJUSTMENTS (MOBILE-FIRST)
-   ====================================================================== */
-/* Mobile Devices (max-width: 767px) */
+/* Default background for larger screens (white) */
+.vipentium-bg-white {
+	background-color: white;
+}
+
+/* Ensure a white background on mobile devices (max-width: some breakpoint) */
 @media (max-width: 767px) {
-  .py-12,
-  .py-20 {
-    /* Adjust padding for mobile */
-    padding: 0.7rem;
-    padding-bottom: 2.7rem !important;
-  }
-  
-  .vipentium-bg-white {
-    /* Force white background on mobile */
-    background-color: white;
-  }
-  
-  #codeEditor {
-    /* Replace "margin: rem;" with a proper value */
-    margin: 1rem;
-    padding: 2rem;
-    padding-bottom: 2rem;
-  }
-  
-  .hdr {
-    display: none;
-  }
+
+	/* Adjust 767px as needed for your mobile breakpoint */
+	.py-12,
+	.py-20 {
+		padding-bottom: 2.7rem !important;
+		padding: 0.7rem;
+	}
+
+	.vipentium-bg-white {
+		background-color: white;
+		/* Force white background on mobile */
+	}
+
+	#codeEditor {
+		margin: rem;
+		padding: 2rem;
+		padding-bottom: 2rem;
+	}
+
+	.hdr {
+		display: none;
+	}
 }
 
-/* ======================================================================
-   CONTAINER STYLES
-   ====================================================================== */
+/* Properly defined container with responsive padding */
 .container-proper {
-  max-width: 1280px; /* Default maximum width */
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 1rem; /* Default small padding */
-  padding-right: 1rem;
+	max-width: 1280px;
+	/* Adjust as needed */
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 1rem;
+	/* Default small padding */
+	padding-right: 1rem;
+	/* Default small padding */
 }
 
-/* Small devices (min-width: 640px) */
-@media (min-width: 640px) {
-  .container-proper {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-}
-
-/* Extra large devices (min-width: 1280px) */
 @media (min-width: 1280px) {
-  .container-proper {
-    padding-left: 4rem;
-    padding-right: 4rem;
-  }
+
+	/* xl */
+	.container-proper {
+		padding-left: 4rem;
+		padding-right: 4rem;
+	}
 }
 
-/* Additional spacing for very small screens (max-width: 640px) */
+@media (min-width: 640px) {
+
+	/* sm */
+	.container-proper {
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
+}
+
 @media (max-width: 640px) {
-  .py-40 {
-    padding-top: 5rem !important;
-    padding-bottom: 5rem !important;
-  }
+	.py-40 {
+		padding-top: 5rem !important;
+		padding-bottom: 5rem !important;
+	}
 }
 
-/* Custom larger breakpoint (min-width: 1920px) */
 @media (min-width: 1920px) {
-  .container-proper {
-    padding-left: 6rem;
-    padding-right: 6rem;
-  }
+
+	/* Custom larger breakpoint */
+	.container-proper {
+		padding-left: 6rem;
+		padding-right: 6rem;
+	}
 }
 
-/* ======================================================================
-   CODE EDITOR STYLES
-   ====================================================================== */
+/* ====================================================== Code Editor Container Styling ====================================================== */
 .code-editor {
-  width: 800px;
-  max-width: 100%;
-  margin: 40px auto;
-  background-color: #0d1117;
-  border-radius: 8px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
-  transition: all 0.3s ease;
-  font-family: "SF Mono", Consolas, "Courier New", monospace;
+	width: 800px;
+	max-width: 100%;
+	margin: 40px auto;
+	background-color: #0d1117;
+	border-radius: 8px;
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+	overflow: hidden;
+	transition: all 0.3s ease;
+	font-family: "SF Mono", Consolas, "Courier New", monospace;
 }
 
-/* Maximized editor (fills most of the viewport) */
+/* When maximized, fill most of the viewport */
 .code-editor.maximized {
-  width: 95%;
-  height: 90vh;
-  margin: 10px auto;
+	width: 95%;
+	height: 90vh;
+	margin: 10px auto;
 }
 
-/* ======================================================================
-   EDITOR HEADER & CONTROL BUTTONS
-   ====================================================================== */
+/* ====================================================== Editor Header & Control Buttons ====================================================== */
 .editor-header {
-  background-color: #1f2937;
-  padding: 8px 16px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid #374151;
+	background-color: #1f2937;
+	padding: 8px 16px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border-bottom: 1px solid #374151;
 }
 
 .editor-filename {
-  font-size: 0.9rem;
-  font-weight: bold;
-  color: #2bc241;
+	font-size: 0.9rem;
+	font-weight: bold;
+	color: #2bc241;
 }
 
 .editor-buttons {
-  display: flex;
-  gap: 8px;
+	display: flex;
+	gap: 8px;
 }
 
 .editor-btn {
-  width: 16px;
-  height: 16px;
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 0.8rem;
-  line-height: 16px;
-  text-align: center;
-  color: white;
-  padding: 0;
+	width: 16px;
+	height: 16px;
+	border: none;
+	border-radius: 50%;
+	cursor: pointer;
+	font-size: 0.8rem;
+	line-height: 16px;
+	text-align: center;
+	color: white;
+	padding: 0;
 }
 
 .close-btn {
-  background-color: #ff605c; /* Red */
+	background-color: #ff605c;
 }
 
+/* Red */
 .maximize-btn {
-  background-color: #ffbd44; /* Yellow */
+	background-color: #ffbd44;
 }
 
+/* Yellow */
 .minimize-btn {
-  background-color: #00ca4e; /* Green */
+	background-color: #00ca4e;
 }
 
-/* ======================================================================
-   EDITOR CONTENT STYLES
-   ====================================================================== */
+/* Green */
+/* ====================================================== Editor Content Styling ====================================================== */
 .editor-content {
-  background-color: #0d1117;
-  padding: 16px;
-  color: #c9d1d9;
-  overflow-y: auto;
-  max-height: 400px;
-  transition: max-height 0.3s ease, padding 0.3s ease, opacity 0.3s ease;
+	background-color: #0d1117;
+	padding: 16px;
+	color: #c9d1d9;
+	overflow-y: auto;
+	max-height: 400px;
+	transition: max-height 0.3s ease, padding 0.3s ease, opacity 0.3s ease;
 }
 
 /* When minimized, collapse the content area */
 .editor-content.collapsed {
-  max-height: 0;
-  padding: 0 16px;
-  opacity: 0;
+	max-height: 0;
+	padding: 0 16px;
+	opacity: 0;
 }
 
-/* ======================================================================
-   ANIMATED OUTPUT LINES
-   ====================================================================== */
+/* ====================================================== Animated Output Lines ====================================================== */
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+	from {
+		opacity: 0;
+		transform: translateY(10px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }
 
 .output-line {
-  opacity: 0;
-  animation: fadeIn 0.7s ease forwards;
-  white-space: pre;
-  display: block;
+	opacity: 0;
+	animation: fadeIn 0.7s ease forwards;
+	white-space: pre;
+	display: block;
 }
 
-/* ======================================================================
-   NAVIGATION OVERRIDE
-   ====================================================================== */
 nav.vipentium-bg-white.shadow-md.py-4.sticky.top-0.z-50 {
-  background: white !important;
+	background: white !important;
 }
