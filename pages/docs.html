@@ -447,119 +447,114 @@ vipentium-runner tests/ --mark database --mark critical
     </div>
   </section>
 
-    <section id="trello-integration">
+   <section id="trello-env-setup">
   <h2 class="vipentium-primary-green text-2xl sm:text-3xl font-bold mb-4">
-    Trello Integration Credentials Setup 🔐
+    Trello Environment Variable Setup ⚙️
   </h2>
+
   <p class="mb-4 text-gray-700 text-sm sm:text-base">
-    Enhance your Vipentium testing workflow by enabling Trello integration! With this feature,
-    every test failure is automatically logged as a Trello card—making it easier than ever to track and resolve issues.
+    Configure your Trello credentials using environment variables for seamless integration with Vipentium.
+    Follow the steps below for setup in <strong>Command Prompt</strong> or <strong>PowerShell</strong>.
   </p>
 
-  <!-- Step 1: Create a .env File -->
+  <!-- Step 1: Set Up in Command Prompt -->
   <div class="mb-8">
     <h3 class="text-xl sm:text-2xl font-semibold mb-3">
-      Step 1: Create a <code>.env</code> File 📄
-    </h3>
-    <p class="mb-4 text-gray-700 text-sm sm:text-base">
-      In the root directory of your project, create a file named:
-      <br>
-      <code>.env</code>
-    </p>
-  </div>
-
-  <!-- Step 2: Add Your Trello Credentials -->
-  <div class="mb-8">
-    <h3 class="text-xl sm:text-2xl font-semibold mb-3">
-      Step 2: Add Your Trello Credentials 🛡️
+      Step 1: Setup in Command Prompt 💻
     </h3>
     <p class="mb-2 text-gray-700 text-sm sm:text-base">
-      Open the <code>.env</code> file and add the following lines (replace the placeholders with your actual credentials):
+      Run the following commands in **Command Prompt** to set Trello credentials:
     </p>
     <div class="vipentium-code-block relative mb-4">
       <button class="vipentium-copy-btn" onclick="copyToClipboard(this)">Copy</button>
       <pre class="text-sm sm:text-base">
-TRELLO_KEY=your_trello_api_key_here
-TRELLO_TOKEN=your_trello_api_token_here
-TRELLO_LIST_ID=your_trello_list_id_here
+set TRELLO_TOKEN=your_trello_api_token_here
+set TRELLO_KEY=your_trello_api_key_here
+set TRELLO_LIST_ID=your_trello_list_id_here
       </pre>
     </div>
-    <p class="mb-2 text-gray-700 text-sm sm:text-base">
-      <strong>TRELLO_KEY:</strong> Your unique Trello API key.<br>
-      <strong>TRELLO_TOKEN:</strong> Your Trello API token.<br>
-      <strong>TRELLO_LIST_ID:</strong> The ID of the Trello list where new cards will be created for test failures.
-    </p>
-  </div>
-
-  <!-- Step 3: Secure Your Credentials -->
-  <div class="mb-8">
-    <h3 class="text-xl sm:text-2xl font-semibold mb-3">
-      Step 3: Secure Your Credentials 🔒
-    </h3>
     <p class="mb-4 text-gray-700 text-sm sm:text-base">
-      To protect your sensitive information, add the <code>.env</code> file to your <code>.gitignore</code>:
+      To **verify** the stored values, run:
     </p>
     <div class="vipentium-code-block relative mb-4">
       <button class="vipentium-copy-btn" onclick="copyToClipboard(this)">Copy</button>
       <pre class="text-sm sm:text-base">
-.env
+echo %TRELLO_TOKEN%
+echo %TRELLO_KEY%
+echo %TRELLO_LIST_ID%
       </pre>
     </div>
   </div>
 
-  <!-- Step 4: Setting Up Environment Variables in PowerShell -->
+  <!-- Step 2: Set Up in PowerShell -->
   <div class="mb-8">
     <h3 class="text-xl sm:text-2xl font-semibold mb-3">
-      Step 4: Setting Up Environment Variables in PowerShell 🚀
+      Step 2: Setup in PowerShell ⚡
     </h3>
-    <p class="mb-4 text-gray-700 text-sm sm:text-base">
-      If you run your tests using PowerShell, manually set your Trello environment variables by executing the following commands (replace the placeholders with your actual credentials):
+    <p class="mb-2 text-gray-700 text-sm sm:text-base">
+      Run these commands in **PowerShell** to set environment variables:
     </p>
     <div class="vipentium-code-block relative mb-4">
       <button class="vipentium-copy-btn" onclick="copyToClipboard(this)">Copy</button>
       <pre class="text-sm sm:text-base">
-$env:TRELLO_KEY = "your_trello_api_key_here"
 $env:TRELLO_TOKEN = "your_trello_api_token_here"
+$env:TRELLO_KEY = "your_trello_api_key_here"
 $env:TRELLO_LIST_ID = "your_trello_list_id_here"
       </pre>
     </div>
     <p class="mb-4 text-gray-700 text-sm sm:text-base">
-      (Optional) Verify the variables with:
+      To **verify** stored values, run:
     </p>
     <div class="vipentium-code-block relative mb-4">
       <button class="vipentium-copy-btn" onclick="copyToClipboard(this)">Copy</button>
       <pre class="text-sm sm:text-base">
-echo $env:TRELLO_KEY
 echo $env:TRELLO_TOKEN
+echo $env:TRELLO_KEY
 echo $env:TRELLO_LIST_ID
       </pre>
     </div>
   </div>
 
-  <!-- Step 5: Usage -->
+  <!-- Step 3: Reset/Remove Variables -->
   <div class="mb-8">
     <h3 class="text-xl sm:text-2xl font-semibold mb-3">
-      Step 5: Usage ⚙️
+      Step 3: Reset Trello Variables 🔄
     </h3>
-    <p class="mb-4 text-gray-700 text-sm sm:text-base">
-      With your credentials configured, Vipentium will automatically load these environment variables.
-      Enable Trello integration by using the <code>--trello</code> option when running your tests:
+    <p class="mb-2 text-gray-700 text-sm sm:text-base">
+      If you need to **clear** the stored Trello credentials, run the following:
     </p>
+
+    <!-- Reset in Command Prompt -->
+    <h4 class="text-lg sm:text-xl font-semibold mb-2">Command Prompt:</h4>
     <div class="vipentium-code-block relative mb-4">
       <button class="vipentium-copy-btn" onclick="copyToClipboard(this)">Copy</button>
       <pre class="text-sm sm:text-base">
-vipentium-runner &lt;test_path&gt; --trello
+set TRELLO_TOKEN=
+set TRELLO_KEY=
+set TRELLO_LIST_ID=
+      </pre>
+    </div>
+
+    <!-- Reset in PowerShell -->
+    <h4 class="text-lg sm:text-xl font-semibold mb-2">PowerShell:</h4>
+    <div class="vipentium-code-block relative mb-4">
+      <button class="vipentium-copy-btn" onclick="copyToClipboard(this)">Copy</button>
+      <pre class="text-sm sm:text-base">
+Remove-Item Env:TRELLO_TOKEN
+Remove-Item Env:TRELLO_KEY
+Remove-Item Env:TRELLO_LIST_ID
       </pre>
     </div>
     <p class="mb-4 text-gray-700 text-sm sm:text-base">
-      Replace <code>&lt;test_path&gt;</code> with the path to your test files, directory, or module.
+      To **confirm removal**, run the verification commands from earlier.
     </p>
   </div>
 
   <p class="text-gray-700 text-sm sm:text-base">
-    You're all set! Enjoy seamless test tracking and issue resolution with Trello integration. 🚀
+    You're all set! Trello credentials are configured for Vipentium. 🚀
   </p>
 </section>
+
 
 
   <!-- Section 3: Writing Test Cases -->
