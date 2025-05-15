@@ -1,10 +1,11 @@
-from .depss.dep import *          # imports everything from dep.py
-from .decorators.decorator import *  # imports mark, parameters, timeout, retry, etc.
-from .helpers.helper import *      # import helper functions (e.g., color_text, config, logger, etc.)
-from .plugins.plugin import *      # import your Plugin base class, etc.
-from .reports.report import *      # import generate_json_report, generate_html_report, etc.
-from .testcases.coreex import *    # extended test core functionality
-from .testcases.testbase import *  # core TestCase base class
-from .testcases.testsuite import * # TestSuite class and execution orchestration
+from .depss.dep import *          
+from .decorators.decorator import * 
+from .helpers.helper import *      
+from .plugins.plugin import *      
+from .plugins.trelloplugin import * 
+from .reports.report import *      
+from .testcases.coreex import *    
+from .testcases.testbase import *  
+from .testcases.testsuite import * 
 
-__version__ = "1.0.2"
+__version__ = "1.1.1"
