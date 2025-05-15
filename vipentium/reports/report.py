@@ -9,7 +9,7 @@ def generate_json_report(report_file, suite_summary, results):
     metadata = {
         "generated_at": datetime.utcnow().isoformat() + "Z",
         "framework": "vipentium",
-        "framework_version": "1.0.4",  # Update as needed
+        "framework_version": "1.1.1",  # Update as needed
         "python_version": sys.version.split()[0],
         "os": os.name
     }
